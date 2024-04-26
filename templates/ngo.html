@@ -1,0 +1,462 @@
+ {%load static%}
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{%static 'css/ngo.css' %}">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+   
+
+     
+
+    <div class="wrapper">
+        <nav>
+            <input type="checkbox" id="show-search">
+            <input type="checkbox" id="show-menu">
+            <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>  
+          <div class="content" style="margin-top: -6rem;padding: 7rem;background:none;">
+            <div class="logo"><a href="#">INDELIBILE</a></div>
+            <ul class="links">
+                <li><a href="{%url 'nav' %}">Home</a></li>
+                <li><a href="{%url 'about1' %}">About</a></li>
+                <li>
+                    <a href="#" class="desktop-link">Scheme</a>
+                    <input type="checkbox" id="show-scheme">
+                    <label for="show-scheme" >Scheme</label>
+                    <ul>
+                        <li><a href="{%url 'pmay' %}">PMAY</a></li>
+                    <li><a href="{%url 'pmmvy' %}">PMMVY</a></li>
+                    <li><a href="{%url 'diff' %}">Differently Abled</a></li>
+                    <li><a href="{%url 'unemp' %}">UYEGP</a></li>
+                    <li><a href="{%url 'merit' %}">MEGP</a></li>
+              
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="desktop-link">Govt_Docs</a>
+                    <input type="checkbox" id="show-Identifications">
+                    <label for="show-Identifications" >Govt_Docs</label>
+                    <ul>
+                    <li><a href="{%url 'birth' %}">Birth Certificate</a></li>
+                    <li><a href="{%url 'death' %}">Death Certificate</a></li>
+                    <li><a href="{%url 'marry' %}">Marriage Certificate</a></li>
+                    <li><a href="{%url 'communt' %}">Community Certificate</a></li>
+              
+                    </ul>
+                </li>
+               
+                <li><a href="{%url 'ngo' %}">Ngo</a></li>
+                <li><a href="{%url 'help' %}">Helpline</a></li>
+    
+                <li>
+                    <a href="#" class= "desktop-link">Law</a>
+                        <input type="checkbox" id="show-law">
+                    <label for="show-law" >Law</label>
+                    <ul>
+                        <li><a href="{%url 'child' %}">Child</a></li>
+                        <li><a href="{%url 'claw' %}">Common Law</a></li>
+                        <li><a href="{%url 'woman' %}">Woman</a></li>
+                        <li><a href="{%url 'human' %}">Woman</a></li>
+                    </ul>
+    
+                </li>
+    
+                <li><a href="#">login</a></li>
+                <li><a href="#">Form</a></li>
+            </ul>
+           </div>
+           <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+           <form action="#" class="search-box">
+            <input type="text" placeholder="Type Something to Search...." required>
+            <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+           </form>
+        </nav>
+    </div>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    <!-- coded for webpage start -->
+
+ 
+   <div class="banner-card">
+    <img src="{%static 'image/ngo 12.jpg' %}">
+    <div class="banner-text">
+        <h4>"No one is useless in this world,</h4>
+        <p>Who lightens the burdens of another."</p>
+    </div>
+   </div>
+
+   <!-- <div class="row">
+    <h3 style=" background-color: #018D84; height: 40px; width: 100rem;">
+        <marquee direction="left" behaviour="scroll" width="100%" style="color: white;">Online Procedure for Availing Maternity Benefits Under PMMVY</marquee></h3>
+</div> --> 
+   <div class="heading">
+    <h1>About us</h1>
+    <p>welcome to INDIBILE website Connecting NGOs and Communities.</p>
+   </div>
+ <div class="container">
+    <section class="about"> 
+     <div class="about-image">
+        <img src="{%static 'image/pin1.jpg' %}">
+     </div>
+     <div class="about-content">
+        
+
+        <p>At INDIBILE, we're on a mission to make giving back easier than ever before. 
+            Inspired by the simplicity of search engines like Google, we've streamlined the process of finding 
+            and connecting with NGOs. By combining their addresses and websites in one accessible platform,
+            we're empowering individuals like you to take action and support causes you care about.
+            
+         OUR VISION
+            To build a world where everyone can effortlessly connect with NGOs, 
+            contributing to positive change and building stronger communities.
+         WHAT WE DO  
+            
+            We've designed  INDIBILE as a user-friendly hub where you can seamlessly 
+            discover NGOs based on their locations and explore their digital presence. Whether you're passionate about education, 
+            healthcare, environment, or any other cause,
+             we've made it simple to find and engage with the organizations that align with your values.
+       </p>
+         <a href="#" class="read-more">Read More</a>
+     </div>
+    </section>
+ </div>
+</div>
+
+
+<!-- coded for carded -->
+<div class="lava">
+<h2>NGOs and Services</h2>
+<div class="ngo-card">
+   <div class="ngo-image">
+       <img src="{%static 'image/banyan.jpeg' %}" alt="Banyan NGO">
+   </div>
+   <div class="ngo-details">
+       <div class="ngo-title">THE BANYAN NGO</div>
+       <div class="ngo-info">
+           <p>he Banyan is a non-profit organisation dedicated to creating a world where mental health is a priority,
+            and mental illness is understood and treated with the same urgency as physical illness. The organisation was founded in 1993 to provide comprehensive mental health care to marginalised communities in India. Their team of trained professionals 
+           offers various services, including counselling, therapy, medication management, and rehabilitation support...</p>
+           <p class="contact">Contact details:</p>
+           <ul>
+               <li><i class="fa-solid fa-heart"></i>Type of NGO: Trust (Non-Government)</li><br>
+               <li><i class="fa-solid fa-calendar-days fa-xs"></i>Date of Registration: 27-08-1993</li>
+               <li><i class="fa-solid fa-location-dot"></i>Issues Addressed: Health & Family Welfare, Housing, Legal Awareness & Aid, Prisoner’s Issues, Women’s Development & Empowerment</li>
+               <li><i class="fa-solid fa-gavel"></i>FCRA Number: 75900624</li>
+               <!-- <li>Address: The Banyan, 6th Main Road, Mogappair Eri Scheme, Mogappair West, Chennai 600 037</li> -->
+               <li><i class="fa-solid fa-phone"></i>Phone Number: 044-26530504 / 9840775912</li>
+               <li><i class="fa-solid fa-globe"></i>Website: <a href="http://thebanyan.org">thebanyan.org</a></li>
+               <li><i class="fa-regular fa-envelope"></i>Email: ashok.kumar@thebanyan.org</li>
+           </ul>
+       </div>
+   </div>
+</div>
+</div><br><br><br><br>
+
+
+<!-- for 2card -->
+<div class="ngo-card">
+   <div class="ngo-image">
+       <img src="{%static 'image/bhumi.jpeg' %}" alt="Banyan NGO">
+   </div>
+   <div class="ngo-details">
+       <div class="ngo-title">THE BHUMI NGO</div>
+       <div class="ngo-info">
+           <p>Bhumi Registered Societies is a non-governmental organisation promoting social welfare 
+            and community development. The organisation is committed to positively impacting the lives of individuals and communities in need by providing education, healthcare, and livelihood opportunities. Bhumi Registered Societies believes in the power of
+            collective action and works closely with local communities, government bodies, and other NGOs to achieve its goals.</p>
+           <p class="contact">Contact details:</p>
+           <ul>
+               <li><i class="fa-solid fa-heart"></i>Type of NGO: Trust (Non-Government)</li><br>
+               <li><i class="fa-solid fa-calendar-days fa-xs"></i>Date of Registration:15-08-2006</li>
+               <li><i class="fa-solid fa-location-dot"></i>Issues Addressed: 13/1 Cenotaph Road First Lane Teynampet Chennai 600 018</li>
+               <li><i class="fa-solid fa-gavel"></i> Number:75901351</li>
+               <!-- <li>Address: The Banyan, 6th Main Road, Mogappair Eri Scheme, Mogappair West, Chennai 600 037</li> -->
+               <li><i class="fa-solid fa-phone"></i>Phone Number:044-22391014 / 9840091634</li>
+               <li><i class="fa-solid fa-globe"></i>Website: <a href="http://bhumi.ngo">thebanyan.org</a></li>
+               <li><i class="fa-regular fa-envelope"></i>Email:contact@bhumi.ngo </li>
+           </ul>
+       </div>
+   </div>
+</div>
+</div><br><br><br><br>
+
+
+
+<!-- coded for 3card -->
+<div class="ngo-card">
+   <div class="ngo-image">
+       <img src="{%static 'image/sri arunodayam.jpeg' %}" alt="Banyan NGO">
+   </div>
+   <div class="ngo-details">
+       <div class="ngo-title">THE SRI ARUNODAYAM NGO</div>
+       <div class="ngo-info">
+           <p>The Akshaya Patra Foundation is an Indian NGO headquartered in Bengaluru, 
+            Karnataka, with a mission to combat classroom hunger and support the education rights of children 
+            from disadvantaged socio-economic backgrounds.Implementing the PM POSHAN Abhiyaan
+             (formerly known as the Mid-Day Meal Scheme) in government and government-aided schools, </p>
+           <p class="contact">Contact details:</p>
+           <ul>
+               <li><i class="fa-solid fa-heart"></i>Type of NGO: Trust (Non-Government)</li><br>
+               <li><i class="fa-solid fa-calendar-days fa-xs"></i>Date of Registration:N/A</li>
+               <li><i class="fa-solid fa-location-dot"></i>Issues Addressed:45, Sivananda Nagar, Kolathur, Chennai - 600099</li>
+               <li><i class="fa-solid fa-phone"></i>Phone Number: 044-26511450 / 91-9962280037 </li>
+               <li><i class="fa-solid fa-globe"></i>Website: <a href="http://sriarunodayam.org">sriarunodayam</a></li>
+      
+           </ul>
+       </div>
+   </div>
+</div>
+</div><br><br><br><br>
+
+<!-- code for 4ngo -->
+<div class="ngo-card">
+   <div class="ngo-image">
+       <img src="{%static 'image/nice foundation.jpeg' %}" alt="Banyan NGO">
+   </div>
+   <div class="ngo-details">
+       <div class="ngo-title">THE NICE FOUNDATION</div>
+       <div class="ngo-info">
+           <p>he Nice Foundation Trust is a non-profit organisation dedicated to improving the lives of 
+            underprivileged individuals and communities. The trust provides access to education, healthcare,
+             and necessities to those in need.
+            The trust runs several educational programs, including tuition centres and scholarship programs, 
+            to help children from low-income families access quality education..</p>
+           <p class="contact">Contact details:</p>
+           <ul>
+               <li><i class="fa-solid fa-heart"></i>Type of NGO: Trust (Non-Government)</li><br>
+               <li><i class="fa-solid fa-calendar-days fa-xs"></i>Date of Registration:26-12-2005</li>
+               <li><i class="fa-solid fa-location-dot"></i>Issues Addressed: No.198, 2nd Floor, Purasawalkam High Road, Purasawalkam, Chennai 600 010</li>
+               <li><i class="fa-solid fa-gavel"></i>FCRA Number:  75901196</li>
+               <!-- <li>Address: The Banyan, 6th Main Road, Mogappair Eri Scheme, Mogappair West, Chennai 600 037</li> -->
+               <li><i class="fa-solid fa-phone"></i>Phone Number:044-43539636 / 9444145253</li>
+               <li><i class="fa-solid fa-globe"></i>Website: <a href="http://nicefoundation.org.in">nicefoundation.org.in</a></li>
+               <li><i class="fa-regular fa-envelope"></i>Email: nicefoundation@yahoo.com</li>
+           </ul>
+       </div>
+   </div>
+</div>
+</div><br><br><br><br>
+
+<!-- coded for  5ngo -->
+
+<div class="ngo-card">
+   <div class="ngo-image">
+       <img src="{%static 'image/mudhra.jpeg' %}" alt="Banyan NGO">
+   </div>
+   <div class="ngo-details">
+       <div class="ngo-title">THE MUDHRA NGO</div>
+       <div class="ngo-info">
+           <p>Mudhra, A non-governmental organisation, is dedicated to advancing social welfare and neighbourhood development. 
+            The company conducts business throughout India and has registered under the Indian Societies Registration Act.
+            Mudhra is committed to enabling people and communities to create a sustainable society. 
+            They operate in various fields, such as education, health care, the environment, and women’s empowerment.
+             To carry out projects that significantly impact and respond to the most urgent needs of the populace, 
+            we work in partnership with regional communities, governmental institutions, and other organisations.</p>
+           <p class="contact">Contact details:</p>
+           <ul>
+               <li><i class="fa-solid fa-heart"></i>Type of NGO:Registered Societies (Non-Government)</li><br>
+               <li><i class="fa-solid fa-calendar-days fa-xs"></i>Date of Registration:09-09-1996</li>
+               <li><i class="fa-solid fa-location-dot"></i>Issues Addressed: Mudhra, 26, Rama Street, Nungambakkam Chennai -600 034</li>
+              
+               <!-- <li>Address: The Banyan, 6th Main Road, Mogappair Eri Scheme, Mogappair West, Chennai 600 037</li> -->
+               <li><i class="fa-solid fa-phone"></i>Phone Number:044-28264493 / 09382163330</li>
+               <li><i class="fa-solid fa-globe"></i>Website: <a href="http://mudhra.org">mudhra.org</a></li>
+               <li><i class="fa-regular fa-envelope"></i>Email:radha@mudhra.org</li>
+           </ul>
+       </div>
+   </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- coded for services -->
+
+ <div class="content">
+   <h1 class="head">Our Services</h1>
+    <div class="box-container">
+
+    <div class="box">
+      <img src="{%static 'image/pin2.jpg' %}" width="300px", height="200px" >
+      <h3>Education</h3>
+      <p>Education is the cornerstone of empowerment.
+         We are committed to providing quality educational opportunities to underprivileged children and adults.
+         Together, we can unlock the potential of individuals and build a brighter future.
+        </p>
+         <a href="#" class="btn">Read more</a>
+    </div> 
+
+    
+   <div class="box">
+      <img src="{%static 'image/ngo give.jpg' %}"  width="300px", height="200px">
+      <h3>Donation</h3>
+      <p>Our donation program plays a crucial role in supporting the less privileged.
+         Through your generous contributions, we provide essential resources to those in need,and things are  
+        making a tangible difference in their lives.you can also help what you will give for other lives 
+        </p>
+         <a href="#" class="btn">Read more</a>
+    </div>
+
+    <div class="box">
+      <img src="{%static 'image/ngo work.jpg' %}"  width="300px", height="200px">
+      <h3>Support us</h3>
+      <p>We understand that everyone faces challenges at different points in life. 
+         Our support services offer a helping hand to those navigating difficult times. 
+         Whether it's counseling, guidance, or practical assistance, 
+         we are here to lend a compassionate ear and a helping hand.</p>
+         <a href="#" class="btn">Read more</a>
+    </div>
+    
+</div>
+</div> 
+
+
+<!-- code for image slider -->
+
+
+<!-- coded for story  -->
+<div class="story">
+    <h3>Corporated Social Responbilities</h3>
+</div>
+<div class="contain">
+    <img src="{%static 'image/np.jpg' %}" alt="image">
+    <div class="story">
+        <h4>CRS(Corporated Social Responbilities)</h4>
+        <p>CSR stands for Corporate Social Responsibility. It's a business approach that 
+            involves a company taking responsibility for its impact on society and the environment.
+            The purpose of CSR is to encourage businesses to operate in a way that benefits not only 
+            their bottom line, but also the communities they operate in and the environment.
+             This can include activities like community development, environmental sustainability,
+              and ethical business practices.
+        <h5>Here are some common uses and benefits of CSR for Common People:</h5></p>
+        <p>
+        <ul>
+            <li class="comm"><h5>Community Development:</h5>
+    Companies engage in activities like building schools, hospitals, or supporting local 
+    infrastructure to improve the well-being of the communities they operate in.</li>
+    <li><h5>Environmental Sustainability:</h5> CSR encourages businesses to adopt eco-friendly practices, reduce waste,
+         conserve resources, and support initiatives aimed at environmental protection.</li>
+         <li><h5>Employee Well-being:</h5>It includes providing a safe and healthy work environment, offering training 
+            and development opportunities, and supporting employee well-being programs.</li>
+        <li><h5>Ethical Business Practices:</h5> CSR promotes fair business practices, transparency, and ethical conduct,
+             which can lead to better reputation</li>
+        <li><h5>Philanthropy and Charitable Giving:</h5> Companies may donate a portion of 
+            their profits or resources to charitable organizations and causes that align with their CSR goals.</li>
+        <li><h5>Stakeholder Engagement:</h5>Engaging with stakeholders like employees, customers, suppliers, and local 
+            communities to understand their needs and concerns, and incorporating their feedback</li>
+        <li><h5>Diversity and Inclusion:</h5>Promoting diversity and inclusion within the company, ensuring equal 
+            opportunities for all employees regardless of their background.</li>
+        <li><h5>Supply Chain Responsibility:</h5>Ensuring that suppliers and partners also adhere to ethical 
+            and sustainable business practices.</li>
+        <li><h5>Transparency and Reporting:</h5>ompanies may publish reports on their CSR activities to provide transparency 
+            to stakeholders and demonstrate their commitment to responsible business practices.</li>
+        </ul>
+            
+        </p>
+    </div>
+</div><br><br><br>
+
+
+
+<!-- FOOTER coded started -->
+<div class="footer-area">
+    <div class="footer-wave-box">
+       <div class="footer-wave footer-animation"></div>
+    </div>
+    <div class="main">
+       <div class="footer">
+          <div class="single-footer">
+             <h4>about us</h4>
+             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium exercitationem sint dolorem quisquam eaque
+                 corrupti dolore, cum enim expedita eligendi sapiente saepe amet! Sunt suscipit perspiciatis tempore,
+                  blanditiis ad nesciunt? </p>
+                  <div class="footer-social">
+                   <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                   <a href=""><i class="fa-brands fa-twitter"></i></a>
+                   <a href=""><i class="fa-brands fa-instagram"></i></a>
+                   <a href=""><i class="fa fa-linkedin"></i></a>
+                  </div>
+          </div>
+          <div class="single-footer">
+             <h4>main menu</h4>
+             <ul>
+                <li><a href=""><i class="fa-solid fa-chevron-right"></i>home</a></li>
+                <li><a href=""><i class="fa-solid fa-chevron-right"></i>About us</a></li>
+                <li><a href=""><i class="fa-solid fa-chevron-right"></i>Scheme</a></li>
+                <li><a href=""><i class="fa-solid fa-chevron-right"></i>identification</a></li>
+                <li><a href=""><i class="fa-solid fa-chevron-right"></i>law</a></li>
+                <li><a href=""><i class="fa-solid fa-chevron-right"></i>ngo</a></li>
+             </ul>
+          </div>
+          <div class="single-footer">
+          <h4>quick links</h4>
+             <ul>
+                <li><a href=""><i class="fa-solid fa-chevron-right"></i>privacy policy</a></li>
+                <li><a href=""><i class="fa-solid fa-chevron-right"></i>terms & condition</a></li>
+                <li><a href=""><i class="fa-solid fa-chevron-right"></i>Forms</a></li>
+                
+             </ul>
+          </div>
+          <div class="single-footer">
+             <h4>Contact us</h4>
+                <ul>
+                   <li><a href=""><i class="fas fa-map-marker-alt"></i>South india,chennai</a></li>
+                   <li><a href=""><i class="fas fa-mobile-alt"></i>+91 123 456 7890</a></li>
+                   <li><a href=""><i class="fa-solid fa-envelope"></i>indelibile@gmail.com</a></li>
+                   <li><a href=""><i class="fas fa-globe-europe"></i>www.indilible.com</a></li>
+                   
+                </ul>
+             </div>
+       </div>
+       </div>
+       
+       
+       <div class="copy">
+          <p>&copy; 2023 all rights reserved</p>
+       </div>
+    </div>
+ </footer>
+ 
+ 
+
+
+     
+
+</body>
+</html>
+       

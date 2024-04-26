@@ -1,0 +1,48 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href='{%static "css/firsts.css" %}'>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form method="POST" action="{% url 'login' %}">
+             {% csrf_token %}
+             <table>
+                <tr>
+                    <td><label for="{{ form.username.id_for_label }}">Username:</label></td>
+                    <td>{{form.username}}</td>
+                </tr>
+                <tr>
+                    <td><label for="{{ form.password.id_for_label }}">Password:</label></td>
+                            <td>{{ form.password }}</td>
+                </tr>
+             </table>
+             <button type="submit" class="log-btn" style="background-color: transparent;height: 3rem;margin-top: 4rem;padding-top: -5rem;color: wheat;position: absolute;" value="Login" name="login"><a href="{%url 'nav' %}" style="margin-top: 0rem;">Login</a></button>
+             </form>
+
+        <!-- <div class="user-box">
+        <input type="text" name="Username" required>
+        <label>Username</label>
+        </div>
+        <div class="user-box">
+        <input type="password" name="password" required>
+        <label>Password</label>
+        </div> -->
+        <!-- <a href="{%url 'nav' %}">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Submit
+    </form>
+</a>
+</a> -->
+</div>
+</body>
+</html>

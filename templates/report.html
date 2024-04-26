@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="2">
+        <tr>
+            <th>id</th>
+            <th>username</th>
+            <th>email</th>
+            <th>district</th>
+            <th>pincode</th>
+            <th>country</th>
+            <th>queries</th>
+
+        </tr>
+        {% for i in f %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.username}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.district}}</td>
+            <td>{{i.pincode}}</td>
+            <td>{{i.country}}</td>
+            <td>{{i.queries}}</td>
+
+        </tr>
+        {% endfor %}
+        
+    </table>
+</body>
+</html>

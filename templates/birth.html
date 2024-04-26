@@ -1,0 +1,744 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birth Certificate</title>
+    <link rel="stylesheet" href="{% static 'css/birth.css' %}" />
+
+
+<style>
+
+.wrapper{
+  top: 0;
+  background-color: #171c24;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+ 
+}
+
+.wrapper nav{
+  /* position: relative; */
+ text-decoration: none;
+  display: flex;
+  max-width: calc(100% - 200px);
+   margin: 0 auto;
+  height: 70px;
+  text-align: center;
+  justify-content: space-between;
+}
+
+nav .content{
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+nav .content .links{
+  margin-left: 80px;
+  display: flex;
+
+}
+
+.content .logo a{
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.content .links li{
+  list-style: none;
+  /* line-height: 70px; */
+  position: relative;
+ 
+
+}
+
+
+.content .links li a,
+.content .links li label{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  /* background: aquamarine; */
+  padding: 9px 17px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+
+}
+
+.content .links li label{
+  display: none;
+}
+
+.content .links li a:hover,
+.content .links li label:hover {
+  background: #323c4e;
+}
+
+.wrapper .search-icon,
+.wrapper .menu-icon{
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 70px;
+  width: 70px;
+  text-align: center;
+
+
+}
+
+.wrapper .menu-icon{
+  display: none;
+}
+
+
+
+wrapper #show-search:checked ~ .search-icon i::before{
+  content: "\f00d";
+  /* font awesome unicode */
+}
+
+
+
+.wrapper .search-box{
+  padding-top: 10px;
+  position: absolute;
+  height: 100%;
+  max-width: calc(100% - 50px);
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3e ease;
+
+}
+
+.wrapper #show-search:checked ~ .search-box{
+  opacity: 1;
+  pointer-events: auto;
+
+
+}
+
+.search-box input{
+  /* padding-top: 10px; */
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  color: #fff;
+  background: #171c24;
+  padding: 0 100px 0 15px;
+
+}
+
+.search-box input::placeholder{
+  color: #f2f2f2;
+}
+
+.search-box .go-icon{
+  text-align: center;
+  position: absolute;
+  right: 10px;
+  padding: 20px;
+  top: 45%;
+  overflow: hidden;
+  transform: translateY(-50%);
+  line-height: 37px;
+  width: 80px;
+  background: #171c24;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.wrapper input[type="checkbox"]{
+  display: none;
+}
+
+/* dropdown menu code start */
+
+.content .links ul{
+  position: absolute;
+  background: #171c24;
+  top:100%;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  width: 200px;
+  padding: 10px;
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+}
+
+.content .links li:hover ul{
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3e ease;
+
+}
+
+.content .links ul li a{
+ display: block;
+ width: 100%;
+ line-height: 30px;
+ border-radius: 0px!important;
+}
+
+/* .hide{
+  display: none;
+} */
+
+
+
+
+
+
+
+
+
+
+/* responsive code start */
+
+@media screen and (max-width: 1250px){
+  .wrapper nav{
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  nav .content .links{
+    margin-left: 30px;
+  }
+ 
+  .content.links li a{
+    padding: 8px 13px;
+  }
+
+  .wrapper .search-box{
+    max-width: calc(100%-100px);
+  }
+
+  .wrapper .search-box input{
+   padding: 0 100px 0 15px;
+  }
+  
+}
+
+@media screen and (max-width:900px){
+  .wrapper .menu-icon{
+    display: block;
+  }
+.wrapper #show-menu:checked ~.menu-icon i::before{
+  content: "\f00d";
+}
+  nav .content .links{
+    display: block;
+    position: fixed;
+    background: #14181f;
+    height: 100%;
+    width: 100%;
+    top: 70px;
+    left: -100%;
+    margin-left:0;
+    max-width: 350px;
+    text-align: justify;
+    padding-bottom: 100px;
+    transition: all 0.3e ease;
+    overflow-y: auto;
+    
+  }
+
+nav #show-menu:checked ~ .content .links{
+   left: 0;
+}
+
+.content{
+  align-items: center;
+  background-color: #2b2e33;
+}
+
+  .content .links li{
+    margin: 15px 20px;
+  }
+
+  .content .links li a,
+  .content .links li label{
+   line-height: 40px;
+   font-size: 20px;
+   display: block;
+   padding: 8px 18px;
+   cursor: pointer;
+   
+  }
+  
+  .content .links li a.desktop-link{
+    display: none;
+  }
+
+  .row .col h1,p , button{
+    display:none;
+  }
+
+  .heading h1{
+    display: none;
+  }
+
+
+
+
+  /* #show-screen:checked ~ .heading h1,
+  #show-Identifications:checked ~ .heading h1 {
+    display: none;
+  } */
+  
+ /* dropdown responsive code star */
+ 
+ .content .links ul{
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  background: none;
+  max-height: 0px;
+  overflow: hidden;
+
+ }
+
+ .content .links #show-scheme:checked ~ ul,
+ .content .links #show-Identifications:checked ~ ul,
+ .content .links #show-law:checked ~ ul{
+  max-height: 100vh;
+ }
+
+ .content .links ul li{
+  margin: 7px 20px;
+ }
+
+ .content .links ul li a{
+  font-size: 18px;
+  line-height: 30px;
+  border-radius: 5px!important;
+
+ }
+
+ 
+
+ @media screen and (max-width:400px){
+  .wrapper nav{
+    padding: 0 10px;
+  }
+  .content .logo a{
+    font-size: 27px;
+  }
+ }
+
+ .wrapper .search-box{
+  max-width: calc(100%-50px);
+}
+
+.wrapper .search-box .go-icon{
+width: 30px;
+right: 0;
+}
+.wrapper .search-box input{
+  padding-right: 30px;
+}
+
+
+
+}
+
+
+
+</style>
+
+
+  </head>
+  <body>
+
+
+    <div class="wrapper">
+      <nav>
+          <input type="checkbox" id="show-search">
+          <input type="checkbox" id="show-menu">
+          <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>  
+        <div class="content" style="margin-top: -6rem;padding: 7rem;background:none;">
+          <div class="logo"><a href="#" style="background-color: #171c24; margin-top: -1.5rem;">INDELIBLE</a></div>
+          <ul class="links" style="margin-top: -1.1rem;">
+              <li><a href="{%url 'nav' %}" style="background-color: #171c24;">Home</a></li>
+              <li><a href="{%url 'about1' %}" style="background-color: #171c24;">About</a></li>
+              <li>
+                  <a href="#" class="desktop-link" style="background-color: #171c24;">Scheme</a>
+                  <input type="checkbox" id="show-scheme">
+                  <label for="show-scheme" >Scheme</label>
+                  <ul>
+                      <li><a href="{%url 'pmay' %}">PMAY</a></li>
+                  <li><a href="{%url 'pmmvy' %}">PMMVY</a></li>
+                  <li><a href="{%url 'diff' %}">Differently Abled</a></li>
+                  <li><a href="{%url 'unemp' %}">UYEGP</a></li>
+                  <li><a href="{%url 'merit' %}">MEGP</a></li>
+            
+                  </ul>
+              </li>
+              <li>
+                  <a href="#" class="desktop-link" style="background-color: #171c24;">Govt_Docs</a>
+                  <input type="checkbox" id="show-Identifications">
+                  <label for="show-Identifications" >Govt_Docs</label>
+                  <ul>
+                  <li><a href="{%url 'birth' %}">Birth Certificate</a></li>
+                  <li><a href="{%url 'death' %}">Death Certificate</a></li>
+                  <li><a href="{%url 'marry' %}">Marriage Certificate</a></li>
+                  <li><a href="{%url 'communt' %}">Community Certificate</a></li>
+            
+                  </ul>
+              </li>
+             
+              <li><a href="{%url 'ngo' %}" style="background-color: #171c24;">Ngo</a></li>
+              <li><a href="{%url 'help' %}" style="background-color: #171c24;">Helpline</a></li>
+  
+              <li>
+                  <a href="#" class= "desktop-link" style="background-color: #171c24;">Law</a>
+                      <input type="checkbox" id="show-law">
+                  <label for="show-law" >Law</label>
+                  <ul>
+                      <li><a href="{%url 'child' %}">Child</a></li>
+                      <li><a href="{%url 'claw' %}">Common Law</a></li>
+                      <li><a href="{%url 'woman' %}">Woman</a></li>
+                      <li><a href="{%url 'human' %}">Woman</a></li>
+                  </ul>
+  
+              </li>
+  
+              <li><a href="#" style="background-color: #171c24;">login</a></li>
+              <li><a href="#" style="background-color: #171c24;">Form</a></li>
+          </ul>
+         </div>
+         <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+         <form action="#" class="search-box">
+          <input type="text" placeholder="Type Something to Search...." required>
+          <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+         </form>
+      </nav>
+  </div>
+
+
+
+
+
+
+    <div class="containers" >
+      <div class="sliders">
+        <div class="slides" style="margin-top: 4.3rem;">
+          <h1 style="font-family:Georgia, 'Times New Roman', Times, serif; font-size:40px; ">Govt_Doc</h1>
+          <p>Procedures For Birth Certificate, Both Online And Offline</p>
+        </div>
+        <br>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="define">
+      <h1 style="text-align: center";>Birth Certificate</h1>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br>
+    <br>
+    <div class="text">
+      <p>
+        The birth certificate is the first identity certificate of an individual
+        and a vital certificate in India for various activities. The birth
+        certificate has the date and details of a person’s birth.To get the
+        birth certificate, you must first register the birth within 22 days to
+        the concerned offices or online.After the verification , the birth
+        certificateis issued.
+      </p>
+    </div>
+    <br>
+    <br>
+    <!-- <div class="marquee1">
+      <div>
+        <span>How To Apply Birth Certificate Through Online</span>-->
+        <!-- you need the second one - otherwise there is a lot of blank space and it will look odd -->
+        <!-- <span> How To Apply Birth Certificate Through Online</span>
+      </div>
+    </div> --> 
+
+    <div class="head">
+         <h2>How To Apply Birth Certificate Through Online</h2>
+    </div>
+    <div class="fullcontent">
+                <button class="menu">
+          <svg
+            width="64px"
+            height="64px"
+            viewBox="0 0 24.00 24.00"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            transform="rotate(0)"
+            stroke="#999999"
+          >
+            <g
+              id="SVGRepo_bgCarrier"
+              stroke-width="0"
+              transform="translate(0,0), scale(1)"
+            ></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke="#999999CCCCCC"
+              stroke-width="0.43200000000000005"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M4 6H20M4 12H20M4 18H20"
+                stroke="#999999"
+                stroke-width="1.344"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </g>
+          </svg>
+        </button>
+        <button class="close">
+          <svg
+            width="48px"
+            height="48px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M5 5L19 19M5 19L19 5"
+                stroke="#999999"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </g>
+          </svg>
+        </button>
+      </div>
+      <div id="start"></div>
+      <div class="home_section">
+        <div class="slider_section">
+          <h3 class="slider_title"></h3>
+          <div class="imgs_container">
+            <div class="single_img">
+              <img
+                src="{%static 'image/hp.jpeg' %}"
+                alt="spaghetti"
+               />
+              <p class="description">
+                <span class="pasta_type" style="font-size: 20px">Home Page</span> </p>
+            </div>
+
+            <div class="single_img">
+              <img
+                src="{%static 'fp.jpg' %}"
+                alt="bucatini"
+              />
+              <p class="description">
+                <span class="pasta_type"  style="font-size: 20px";>Front Page</span> 
+              </p>
+            </div>
+
+            <div class="single_img">
+              <img
+                src="{%static 'form.jpeg' %}"
+                alt="linguine"
+              />
+              <p class="description">
+                <span class="pasta_type" style="font-size: 20px;">Fill the details</span> 
+              </p>
+            </div>
+          </div>
+          <button id="left_slider" style="color: rgb(14, 14, 63);">❮</button>
+          <button id="right_slider" style="color: rgb(14, 14, 63);">❯</button>
+        </div>
+
+        <ul class="rules_container">
+          <li>
+            <strong style="color:brown">Step 1</strong>
+            <p class="single_rule" style="font-size:20px; ">
+              Open Any brower. Go to the official website of e town panchayat.The home page will be open.
+            </p>
+          </li>
+          <li>
+            <strong style="color:brown" >Step 2</strong
+            >
+            <p class="single_rule" style="font-size:20px;">
+              Click on the Birth Certificate.To click on apply birth registration.
+            </p>
+          </li>
+          <li>
+            <strong style="color:brown">Step 3</strong>
+            <p class="single_rule" style="font-size:20px;">
+              The registration page will be appear.To enter the personal information on this registration page.
+            </p>
+          </li>
+          <li>
+            <strong style="color:brown">Step 4</strong
+            >
+            <p class="single_rule" style="font-size:20px;">
+              Submit the registration.
+            </p>
+          </li>
+
+          <li>
+            <strong></strong>
+          </li>
+        </ul>
+      </div>
+      <div id="sauces"></div> 
+      </div>
+    </div>
+    <script src="{%static 'js/birth.js' %}"></script>
+    <div class="marquee">
+      <div>
+        <span>Visually Explain</span>
+        <!-- you need the second one - otherwise there is a lot of blank space and it will look odd -->
+        <span>Visually Explain</span>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="editing">
+      <center>
+        
+       <embed src="{%static 'image/birthvideos.mp4' %}" width="600" height="500"  style="border:1px outset grey;">
+       </video>
+      </center>
+     </div>
+     <br>
+     <br>
+     <!-- <div class="marquee2">
+     <div>
+      <span> How To Check  Birth Certificate Through Online</span>-->
+      <!-- you need the second one - otherwise there is a lot of blank space and it will look odd -->
+      <!--<span> How To Check  Birth Certificate Through Online</span>
+    </div>
+  </div> -->
+  <br>
+  <hr>
+
+  <div class="head">
+    <h2>How To Check Status Birth Certificate Through Online</h2>
+</div>
+  <br>
+  <br>
+  <br>
+  <br>
+    <!--Griglia alternata testo e immagine, resposive con flexbox.-->
+<section>
+  <div class="grid-flex">
+    <div class="col col-image" style="background-image: url('{% static "image/fp.jpg" %}');" >
+    </div>
+    <div class="col col-text">
+      <div class="Aligner-item">
+        <p>
+          <span style="color: brown; font-size:20px" >Step 1:</span>
+          <p style="font-family:Georgia, 'Times New Roman', Times, serif; line-height: 1.5; font-size:20px">Go to the official website of e town panchayat.The home page will be open.Now, to click on the track birth certificate.</p> 
+          
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="grid-flex">
+    <div class="col col-image" style="background-image: url('{% static "image/ch.jpg" %}');">
+      &nbsp;
+    </div>
+    <div class="col col-text col-left">
+      <div class="Aligner-item">
+        <p>
+          <span style="color: brown;  font-size:20px">Step 2:</span> <p style="font-family:Georgia, 'Times New Roman', Times, serif; line-height: 1.5; font-size:20px">Now a new page will be open.On this new page, you have to enter your request number or mobile number</p>
+          <span style="color: brown; font-size:20px">Step 3:</span> <p style="font-family:Georgia, 'Times New Roman', Times, serif; line-height: 1.5; font-size:20px">After that, you have to click on the track then display status of the birth certificate.</p>
+      </p>
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+<br>
+<hr>
+<div class="head">
+  <h2>How To Apply Birth Certificate Through Offline</h2>
+</div>
+<br>
+<br>
+ <section>
+  <div class="rt-container">
+    <div class="col-rt-12">
+      <div id="slider">
+        <ul>
+          <li>
+            
+            <div class="slider-container">
+              <h4 style="color:brown">Step 1</h4>
+              <p syle="font-size:20px">
+                <b>To apply for a Birth Certificate Tamil Nadu , you must first register the birth in “panchayat/ municipal/Corporation / Health Department ” in your area.</b>
+                </p>
+            </div>
+          </li>
+          <li>
+            <div class="slider-container">
+              <h4 style="color:brown">Step 2</h4>
+              <p syle="font-size:20px">
+                <b>Fill up the form prescribed by the registering authority or as in keeping alongside a certificate from the physician or Medical Institution where the Birth takes place.</b>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="slider-container">
+              <h4 style="color:brown">Step 3</h4>
+              <p syle="font-size:20px">
+               <b>One has to approach the authority and apply for the certificates on any working day.Following the submission of the form and documents, the authorities will review the records.</b>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="slider-container">
+              <h4 style="color:brown">Step 4</h4>
+              <p syle="font-size:20px",>
+               <b>Authority will be reviewing the details and documents to issue the certificate after accepting the form.</b>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>                  
+<br>
+<br>
+<br>
+<br>
+<br>
+<section>
+<div class="nextbutton">
+  <div class="pre">
+  <a href="../death/death.html" class="movbutton">Previous</a>    
+ 
+ <a href="../community/com.html" class="mov2button">Next</a>  </div>   
+</div>
+<br>
+</section>
+<!-- footer -->
+</body>
+</html>

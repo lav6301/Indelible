@@ -1,0 +1,633 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Certificate</title>
+    <link rel="stylesheet" href="{%static 'css/commu.css' %}" />
+
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,800&family=Roboto:wght@500&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Poppins',sans-serif;
+}
+
+.wrapper{
+  top: 0;
+  background-color: #171c24;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+ 
+}
+
+.wrapper nav{
+  /* position: relative; */
+ text-decoration: none;
+  display: flex;
+  max-width: calc(100% - 200px);
+   margin: 0 auto;
+  height: 70px;
+  text-align: center;
+  justify-content: space-between;
+}
+
+nav .content{
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+nav .content .links{
+  margin-left: 80px;
+  display: flex;
+
+}
+
+.content .logo a{
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.content .links li{
+  list-style: none;
+  /* line-height: 70px; */
+  position: relative;
+ 
+
+}
+
+
+.content .links li a,
+.content .links li label{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  /* background: aquamarine; */
+  padding: 9px 17px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+
+}
+
+.content .links li label{
+  display: none;
+}
+
+.content .links li a:hover,
+.content .links li label:hover {
+  background: #323c4e;
+}
+
+.wrapper .search-icon,
+.wrapper .menu-icon{
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 70px;
+  width: 70px;
+  text-align: center;
+
+
+}
+
+.wrapper .menu-icon{
+  display: none;
+}
+
+
+
+wrapper #show-search:checked ~ .search-icon i::before{
+  content: "\f00d";
+  /* font awesome unicode */
+}
+
+
+
+.wrapper .search-box{
+  padding-top: 10px;
+  position: absolute;
+  height: 100%;
+  max-width: calc(100% - 50px);
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3e ease;
+
+}
+
+.wrapper #show-search:checked ~ .search-box{
+  opacity: 1;
+  pointer-events: auto;
+
+
+}
+
+.search-box input{
+  /* padding-top: 10px; */
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  color: #fff;
+  background: #171c24;
+  padding: 0 100px 0 15px;
+
+}
+
+.search-box input::placeholder{
+  color: #f2f2f2;
+}
+
+.search-box .go-icon{
+  text-align: center;
+  position: absolute;
+  right: 10px;
+  padding: 20px;
+  top: 45%;
+  overflow: hidden;
+  transform: translateY(-50%);
+  line-height: 37px;
+  width: 80px;
+  background: #171c24;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.wrapper input[type="checkbox"]{
+  display: none;
+}
+
+/* dropdown menu code start */
+
+.content .links ul{
+  position: absolute;
+  background: #171c24;
+  top:100%;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  width: 200px;
+  padding: 10px;
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+}
+
+.content .links li:hover ul{
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3e ease;
+
+}
+
+.content .links ul li a{
+ display: block;
+ width: 100%;
+ line-height: 30px;
+ border-radius: 0px!important;
+}
+
+/* .hide{
+  display: none;
+} */
+
+
+
+
+
+
+
+
+
+
+/* responsive code start */
+
+@media screen and (max-width: 1250px){
+  .wrapper nav{
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  nav .content .links{
+    margin-left: 30px;
+  }
+ 
+  .content.links li a{
+    padding: 8px 13px;
+  }
+
+  .wrapper .search-box{
+    max-width: calc(100%-100px);
+  }
+
+  .wrapper .search-box input{
+   padding: 0 100px 0 15px;
+  }
+  
+}
+
+@media screen and (max-width:900px){
+  .wrapper .menu-icon{
+    display: block;
+  }
+.wrapper #show-menu:checked ~.menu-icon i::before{
+  content: "\f00d";
+}
+  nav .content .links{
+    display: block;
+    position: fixed;
+    background: #14181f;
+    height: 100%;
+    width: 100%;
+    top: 70px;
+    left: -100%;
+    margin-left:0;
+    max-width: 350px;
+    text-align: justify;
+    padding-bottom: 100px;
+    transition: all 0.3e ease;
+    overflow-y: auto;
+    
+  }
+
+nav #show-menu:checked ~ .content .links{
+   left: 0;
+}
+
+.content{
+  align-items: center;
+  background-color: #2b2e33;
+}
+
+  .content .links li{
+    margin: 15px 20px;
+  }
+
+  .content .links li a,
+  .content .links li label{
+   line-height: 40px;
+   font-size: 20px;
+   display: block;
+   padding: 8px 18px;
+   cursor: pointer;
+   
+  }
+  
+  .content .links li a.desktop-link{
+    display: none;
+  }
+
+  .row .col h1,p , button{
+    display:none;
+  }
+
+  .heading h1{
+    display: none;
+  }
+
+
+
+
+  /* #show-screen:checked ~ .heading h1,
+  #show-Identifications:checked ~ .heading h1 {
+    display: none;
+  } */
+  
+ /* dropdown responsive code star */
+ 
+ .content .links ul{
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  background: none;
+  max-height: 0px;
+  overflow: hidden;
+
+ }
+
+ .content .links #show-scheme:checked ~ ul,
+ .content .links #show-Identifications:checked ~ ul,
+ .content .links #show-law:checked ~ ul{
+  max-height: 100vh;
+ }
+
+ .content .links ul li{
+  margin: 7px 20px;
+ }
+
+ .content .links ul li a{
+  font-size: 18px;
+  line-height: 30px;
+  border-radius: 5px!important;
+
+ }
+
+ 
+
+ @media screen and (max-width:400px){
+  .wrapper nav{
+    padding: 0 10px;
+  }
+  .content .logo a{
+    font-size: 27px;
+  }
+ }
+
+ .wrapper .search-box{
+  max-width: calc(100%-50px);
+}
+
+.wrapper .search-box .go-icon{
+width: 30px;
+right: 0;
+}
+.wrapper .search-box input{
+  padding-right: 30px;
+}
+
+
+
+}
+
+    </style>
+    
+  </head>
+  <body>
+
+    <div class="wrapper">
+      <nav>
+          <input type="checkbox" id="show-search">
+          <input type="checkbox" id="show-menu">
+          <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>  
+        <div class="content" style="margin-top: -6rem;padding: 7rem;background:none;">
+          <div class="logo"><a href="#" style="height: 13px;padding-top: -1rem;background-color: #171c24;">INDELIBLE</a></div>
+          <ul class="links">
+              <li><a href="{%url 'nav' %}" style=" background-color: #171c24;">Home</a></li>
+              <li><a href="{%url 'about1' %}" style=" background-color: #171c24;">About</a></li>
+              <li>
+                  <a href="#" class="desktop-link" style=" background-color: #171c24;">Scheme</a>
+                  <input type="checkbox" id="show-scheme">
+                  <label for="show-scheme" >Scheme</label>
+                  <ul>
+                      <li><a href="{%url 'pmay' %}">PMAY</a></li>
+                  <li><a href="{%url 'pmmvy' %}">PMMVY</a></li>
+                  <li><a href="{%url 'diff' %}">Differently Abled</a></li>
+                  <li><a href="{%url 'unemp' %}">UYEGP</a></li>
+                  <li><a href="{%url 'merit' %}">MEGP</a></li>
+            
+                  </ul>
+              </li>
+              <li>
+                  <a href="#" class="desktop-link" style=" background-color: #171c24;">Govt_Docs</a>
+                  <input type="checkbox" id="show-Identifications">
+                  <label for="show-Identifications" >Govt_Docs</label>
+                  <ul>
+                  <li><a href="{%url 'birth' %}" >Birth Certificate</a></li>
+                  <li><a href="{%url 'death' %}">Death Certificate</a></li>
+                  <li><a href="{%url 'marry' %}">Marriage Certificate</a></li>
+                  <li><a href="{%url 'communt' %}">Community Certificate</a></li>
+            
+                  </ul>
+              </li>
+             
+              <li><a href="{%url 'ngo' %}" style=" background-color: #171c24;">Ngo</a></li>
+              <li><a href="{%url 'help' %}" style=" background-color: #171c24;">Helpline</a></li>
+  
+              <li>
+                  <a href="#" class= "desktop-link" style=" background-color: #171c24;">Law</a>
+                      <input type="checkbox" id="show-law">
+                  <label for="show-law" >Law</label>
+                  <ul>
+                      <li><a href="{%url 'child' %}">Child</a></li>
+                      <li><a href="{%url 'claw' %}">Common Law</a></li>
+                      <li><a href="{%url 'woman' %}">Woman</a></li>
+                      <li><a href="{%url 'human' %}">Woman</a></li>
+                  </ul>
+  
+              </li>
+  
+              <li><a href="#" style=" background-color: #171c24;">login</a></li>
+              <li><a href="#" style=" background-color: #171c24;">Form</a></li>
+          </ul>
+         </div>
+         <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+         <form action="#" class="search-box">
+          <input type="text" placeholder="Type Something to Search...." required>
+          <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+         </form>
+      </nav>
+  </div>
+
+
+
+
+    <div class="containers">
+      <div class="sliders">
+        <div class="slides">
+          <h1 style="font-family:Georgia, 'Times New Roman', Times, serif; font-size:40px; ">Govt_Doc</h1>
+          <p>Procedures For Community Certificate, Both Online And Offline</p>
+        </div>
+        <br>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="define">
+      <h1 style="text-align: center";>Community Certificate</h1>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br/>
+        <br/>
+    <div class="text">
+      <p>
+        Community Certificate is an official statement provided to the citizen by the state government confirming his/her caste and community.The proof of one’s belonging to a particular caste and community, especially in case one belongs to any of the ‘Scheduled Castes’, ‘Scheduled Tribe’ and the Backward Class as specified in the Indian Constitution.
+      </p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="head">
+      <h2>How To Apply Community Certificate Through Online</h2>
+ </div>
+ <section>
+  <div class="grid-flex">
+    <div class="col col-image" style="background-image: url('{%static "image/loginp.jpeg" %}');" > 
+    </div>
+    <div class="col col-text">
+      <div class="Aligner-item">
+        <p>
+          <span style="color: brown; font-size:20px" >Step 1:</span>
+          <p style="font-family:Georgia, 'Times New Roman', Times, serif; line-height: 1.5; font-size:18px">Register in the TN eSevai portal and Register for CAN to access the application form.</p> 
+          <span style="color: brown;  font-size:20px">Step 2:</span> <p style="font-family:Georgia, 'Times New Roman', Times, serif; line-height: 1.5; font-size:18px"> How to apply e Sevai Registration:
+             Visit TN e Sevai portal and Click on “Citizen Login”.</p>  
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="grid-flex">
+    <div class="col col-image" style="background-image: url('{%static "image/newpage.jpeg" %}');">
+      &nbsp;
+    </div>
+    <div class="col col-text col-left">
+      <div class="Aligner-item">
+        <p>
+          <span style="color: brown;  font-size:20px">Step 3:</span> <p style="font-family:Georgia, 'Times New Roman', Times, serif; line-height: 1.5; font-size:18px">Display the menu page. If you are a new user, click on "New User. <br>
+            <span style="color: brown;  font-size:20px">Step 4:</span> <p style="font-family:Georgia, 'Times New Roman', Times, serif; line-height: 1.5; font-size:18px">After the Page is appear then Enter the all required details.
+          </p>
+      </div>
+    </div>
+  </div>
+  <div class="grid-flex">
+    <div class="col col-image" style="background-image: url('{%static "image/revpage.jpeg" %}');" >
+    </div>
+    <div class="col col-text">
+      <div class="Aligner-item">
+        <p>
+          <span style="color: brown; font-size:20px" >Step 5:</span>
+          <p style="font-family:Georgia, 'Times New Roman', Times, serif; line-height: 1.5; font-size:18px">You will receive an OTP in your registered mobile number to register in the esevai portal. </p>   
+          <span style="color: brown; font-size:20px" >Step 6:</span>
+          <p style="font-family:Georgia, 'Times New Roman', Times, serif; line-height: 1.5; font-size:18px">registered, log in to the website.
+            Select “Revenue Department”. </p> 
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="grid-flex">
+    <div class="col col-image" style="background-image: url('{%static "image/detp.jpeg" %}');">
+      &nbsp;
+    </div>
+    <div class="col col-text col-left">
+      <div class="Aligner-item">
+        <p>
+          <span style="color: brown;  font-size:20px">Step 7:</span> <p style="font-family:Georgia, 'Times New Roman', Times, serif; line-height: 1.5; font-size:18px"> Select “REV-101 Community Certificate” from the list. Click on Proceed. Fill the pesonal information.<br>
+            <span style="color: brown;  font-size:18px">Step 8:</span> <p style="font-family:Georgia, 'Times New Roman', Times, serif; line-height: 1.5; font-size:20px">Click on Register to submit the form.
+              You would be required to generate and verify OTP before submitting the form.
+              On successful CAN Registration, the CAN Number will be generated.
+          </p>
+      </div>
+    </div>
+  </div>
+  <div class="grid-flex">
+    <div class="col col-image" style="background-image: url('{%static "image/search.jpg" %}');">
+    </div>
+    <div class="col col-text">
+      <div class="Aligner-item">
+        <p>
+          <span style="color: brown; font-size:20px" >Step 9:</span>
+          <p style="font-family:Georgia, 'Times New Roman', Times, serif; line-height: 1.5; font-size:18px">First of all above procedure done then Enter the CAN number and search for the records.
+            <br>
+           </p>   
+          <span style="color: brown; font-size:20px" >Step 10 :</span>
+          <p style="font-family:Georgia, 'Times New Roman', Times, serif; line-height: 1.5; font-size:18px">If the applicant is having a unique CAN Number his/her record will be shown in the search results.Select the record by clicking on the option button against the desired record. Verify the details then submit</p>   
+        </p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <hr>
+  <div class="head">
+    <h2>How To Check Status Community Certificate Through Online</h2>
+</div>
+<div class="grid-flex">
+  <div class="col col-image" style="background-image: url('{%static "image/checkp.jpeg" %}');">
+    &nbsp;
+  </div>
+  <div class="col col-text col-left">
+    <div class="Aligner-item">
+      <p>
+        <span style="color: brown;  font-size:20px">Step 1:</span> <p style="font-family:Georgia, 'Times New Roman', Times, serif; line-height: 1.5; font-size:18px"> Login to TN eSevai portal.Click on Check Status<br>
+          <span style="color: brown;  font-size:18px">Step 2:</span> <p style="font-family:Georgia, 'Times New Roman', Times, serif; line-height: 1.5; font-size:20px">Enter Application number / Transaction Number to track the status of the application. Click on Search
+        </p>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<hr>
+<div class="head">
+  <h2>How To Download Community Certificate Through Online</h2>
+</div>
+<div class="grid-flex">
+<div class="col col-image" style="background-image: url('{%static "image/download.jpeg" %}');">
+  &nbsp;
+</div>
+<div class="col col-text col-left">
+  <div class="Aligner-item">
+    <p>
+      <span style="color: brown;  font-size:20px">Step 1:</span> <p style="font-family:Georgia, 'Times New Roman', Times, serif; line-height: 1.5; font-size:18px"> Login to TN eSevai portal.Click on Check Status then  Enter Application Number.<br>
+        <span style="color: brown;  font-size:18px">Step 2:</span> <p style="font-family:Georgia, 'Times New Roman', Times, serif; line-height: 1.5; font-size:20px">Click on the Download Certificate link.
+      </p>
+  </div>
+</div>
+</div>
+  </section>
+  <br>
+  <br>
+  <br>
+  <hr>
+  <div class="head">
+    <h2>How To Apply Community Certificate Through Offline</h2>
+  </div>
+  <br>
+  <br>
+   <section>
+    <div class="rt-container">
+      <div class="col-rt-12">
+        <div id="slider">
+          <ul>
+            <li>
+              
+              <div class="slider-container">
+                <h4 style="color:brown">Step 1</h4>
+                <p syle="font-size:20px">
+                  <b>To visit nearest e Sevai centre. Let the operator know what kind of service you want to avail.</b>
+                  </p>
+              </div>
+            </li>
+            <li>
+              <div class="slider-container">
+                <h4 style="color:brown">Step 2</h4>
+                <p syle="font-size:20px">
+                  <b>Following Steps:<br>
+                    1.Submit all the necessary documents <br>
+                    2.To pay the charges. <br>
+                    3.To collect the receipt after completion of the certificate.</b>
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>                  
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <section>
+    <div class="nextbutton">
+      <div class="pre">
+      <a href="../birth/birth.html" class="movbutton">Previous</a>    
+     
+     <a href="../marriage/marry.html" class="mov2button">Next</a>  </div>   
+    </div>
+    <br>
+    </section>
+  </body>
+</html>

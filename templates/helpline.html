@@ -1,0 +1,693 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href=’https://fonts.googleapis.com/css?family=Merienda’ rel=’stylesheet’> 
+</head>
+<style>
+     @import url('https://fonts.google.com/specimen/Libre+Baskerville');
+    body{
+        font-family:Baskerville ;
+        background-attachment: fixed;
+       
+      
+        background-image: linear-gradient(to right,blanchedalmond white,whitesmoke,beige);
+    }
+
+table,th,tr,td
+{
+    margin-left: 20rem;
+    font-family:Baskerville;
+    
+    background-image:linear-gradient(to right,rgb(216, 238, 215) rgb(248, 231, 231),whitesmoke,rgb(245, 245, 190));
+
+}
+td{
+    padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: 1rem;
+        font-family:Baskerville;
+}
+
+th{
+    height: 3.5rem;
+    text-align: center;
+    font-size: 1.7rem;
+  
+
+}
+    table,th,td
+    {
+        border: 1px solid white;
+        font-family:Baskerville;
+        font-size: 1.3rem;
+       
+       
+    /*background-image: linear-gradient(to top,rgb(54, 55, 54),rgb(100, 101, 100),rgb(70, 72, 70));*/
+    background-color:mediumseagreen;
+        color: wheat;
+       
+    }
+    table th{
+        position: sticky;
+        top: 0px;
+    }
+    button
+    {
+        height:45px;
+        width: 45px;
+        border-radius: 50%;
+        border: 0;
+        position: absolute;
+        margin-left: -3rem;
+        margin-top: .1rem;
+        
+    }
+    .inner-wrapper
+    {
+        max-height: 370px;
+        overflow-y: scroll;
+        width: 1050px;
+        margin-left: 10rem;
+
+    }
+
+    .wrapper{
+  top: 0;
+  background-color: #171c24;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+ 
+}
+
+.wrapper nav{
+  /* position: relative; */
+ text-decoration: none;
+  display: flex;
+  max-width: calc(100% - 200px);
+   margin: 0 auto;
+  height: 70px;
+  text-align: center;
+  justify-content: space-between;
+}
+
+nav .content{
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+nav .content .links{
+  margin-left: 80px;
+  display: flex;
+
+}
+
+.content .logo a{
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.content .links li{
+  list-style: none;
+  /* line-height: 70px; */
+  position: relative;
+ 
+
+}
+
+
+.content .links li a,
+.content .links li label{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  /* background: aquamarine; */
+  padding: 9px 17px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+
+}
+
+.content .links li label{
+  display: none;
+}
+
+.content .links li a:hover,
+.content .links li label:hover {
+  background: #323c4e;
+  text-decoration: none;
+}
+
+.wrapper .search-icon,
+.wrapper .menu-icon{
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 70px;
+  width: 70px;
+  text-align: center;
+
+
+}
+
+.wrapper .menu-icon{
+  display: none;
+}
+
+
+
+wrapper #show-search:checked ~ .search-icon i::before{
+  content: "\f00d";
+  /* font awesome unicode */
+}
+
+
+
+.wrapper .search-box{
+  padding-top: 10px;
+  position: absolute;
+  height: 100%;
+  max-width: calc(100% - 50px);
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3e ease;
+
+}
+
+.wrapper #show-search:checked ~ .search-box{
+  opacity: 1;
+  pointer-events: auto;
+
+
+}
+
+.search-box input{
+  /* padding-top: 10px; */
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  color: #fff;
+  background: #171c24;
+  padding: 0 100px 0 15px;
+
+}
+
+.search-box input::placeholder{
+  color: #f2f2f2;
+}
+
+.search-box .go-icon{
+  text-align: center;
+  position: absolute;
+  right: 10px;
+  padding: 20px;
+  top: 45%;
+  overflow: hidden;
+  transform: translateY(-50%);
+  line-height: 37px;
+  width: 80px;
+  background: #171c24;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.wrapper input[type="checkbox"]{
+  display: none;
+}
+
+/* dropdown menu code start */
+
+.content .links ul{
+  position: absolute;
+  background: #171c24;
+  top:100%;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  width: 200px;
+  padding: 10px;
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+}
+
+.content .links li:hover ul{
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3e ease;
+
+}
+
+.content .links ul li a{
+ display: block;
+ width: 100%;
+ line-height: 30px;
+ border-radius: 0px!important;
+}
+
+/* .hide{
+  display: none;
+} */
+
+
+
+
+
+
+
+
+
+
+/* responsive code start */
+
+@media screen and (max-width: 1250px){
+  .wrapper nav{
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  nav .content .links{
+    margin-left: 30px;
+  }
+ 
+  .content.links li a{
+    padding: 8px 13px;
+  }
+
+  .wrapper .search-box{
+    max-width: calc(100%-100px);
+  }
+
+  .wrapper .search-box input{
+   padding: 0 100px 0 15px;
+  }
+  
+}
+
+@media screen and (max-width:900px){
+  .wrapper .menu-icon{
+    display: block;
+  }
+.wrapper #show-menu:checked ~.menu-icon i::before{
+  content: "\f00d";
+}
+  nav .content .links{
+    display: block;
+    position: fixed;
+    background: #14181f;
+    height: 100%;
+    width: 100%;
+    top: 70px;
+    left: -100%;
+    margin-left:0;
+    max-width: 350px;
+    text-align: justify;
+    padding-bottom: 100px;
+    transition: all 0.3e ease;
+    overflow-y: auto;
+    
+  }
+
+nav #show-menu:checked ~ .content .links{
+   left: 0;
+}
+
+.content{
+  align-items: center;
+  background-color: #2b2e33;
+}
+
+  .content .links li{
+    margin: 15px 20px;
+  }
+
+  .content .links li a,
+  .content .links li label{
+   line-height: 40px;
+   font-size: 20px;
+   display: block;
+   padding: 8px 18px;
+   cursor: pointer;
+   
+  }
+  
+  .content .links li a.desktop-link{
+    display: none;
+  }
+
+  .row .col h1,p , button{
+    display:none;
+  }
+
+  .heading h1{
+    display: none;
+  }
+
+
+
+
+  /* #show-screen:checked ~ .heading h1,
+  #show-Identifications:checked ~ .heading h1 {
+    display: none;
+  } */
+  
+ /* dropdown responsive code star */
+ 
+ .content .links ul{
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  background: none;
+  max-height: 0px;
+  overflow: hidden;
+
+ }
+
+ .content .links #show-scheme:checked ~ ul,
+ .content .links #show-Identifications:checked ~ ul,
+ .content .links #show-law:checked ~ ul{
+  max-height: 100vh;
+ }
+
+ .content .links ul li{
+  margin: 7px 20px;
+ }
+
+ .content .links ul li a{
+  font-size: 18px;
+  line-height: 30px;
+  border-radius: 5px!important;
+
+ }
+
+ 
+
+ @media screen and (max-width:400px){
+  .wrapper nav{
+    padding: 0 10px;
+  }
+  .content .logo a{
+    font-size: 27px;
+  }
+ }
+
+ .wrapper .search-box{
+  max-width: calc(100%-50px);
+}
+
+.wrapper .search-box .go-icon{
+width: 30px;
+right: 0;
+}
+.wrapper .search-box input{
+  padding-right: 30px;
+}
+
+
+
+}
+
+    
+</style>
+<body>
+    <div class="wrapper">
+        <nav>
+            <input type="checkbox" id="show-search">
+            <input type="checkbox" id="show-menu">
+            <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>  
+          <div class="content" style="margin-top: -6rem;padding: 7rem;background:none;">
+            <div class="logo"><a href="#">INDELIBLE</a></div>
+            <ul class="links">
+                <li><a href="{%url 'nav' %}">Home</a></li>
+                <li><a href="{%url 'about1' %}">About</a></li>
+                <li>
+                    <a href="#" class="desktop-link">Scheme</a>
+                    <input type="checkbox" id="show-scheme">
+                    <label for="show-scheme" >Scheme</label>
+                    <ul>
+                        <li><a href="{%url 'pmay' %}">PMAY</a></li>
+                    <li><a href="{%url 'pmmvy' %}">PMMVY</a></li>
+                    <li><a href="{%url 'diff' %}">Differently Abled</a></li>
+                    <li><a href="{%url 'unemp' %}">UYEGP</a></li>
+                    <li><a href="{%url 'merit' %}">MEGP</a></li>
+              
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="desktop-link">Govt_Docs</a>
+                    <input type="checkbox" id="show-Identifications">
+                    <label for="show-Identifications" >Govt_Docs</label>
+                    <ul>
+                    <li><a href="{%url 'birth' %}">Birth Certificate</a></li>
+                    <li><a href="{%url 'death' %}">Death Certificate</a></li>
+                    <li><a href="{%url 'marry' %}">Marriage Certificate</a></li>
+                    <li><a href="{%url 'communt' %}">Community Certificate</a></li>
+              
+                    </ul>
+                </li>
+               
+                <li><a href="{%url 'ngo' %}">Ngo</a></li>
+                <li><a href="{%url 'help' %}">Helpline</a></li>
+    
+                <li>
+                    <a href="#" class= "desktop-link">Law</a>
+                        <input type="checkbox" id="show-law">
+                    <label for="show-law" >Law</label>
+                    <ul>
+                        <li><a href="{%url 'child' %}">Child</a></li>
+                        <li><a href="{%url 'claw' %}">Common Law</a></li>
+                        <li><a href="{%url 'woman' %}">Woman</a></li>
+                        <li><a href="{%url 'human' %}">Woman</a></li>
+                    </ul>
+    
+                </li>
+    
+                <li><a href="#">login</a></li>
+                <li><a href="#">Form</a></li>
+            </ul>
+           </div>
+           <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+           <form action="#" class="search-box">
+            <input type="text" placeholder="Type Something to Search...." required>
+            <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+           </form>
+        </nav>
+    </div>
+    
+       <section>
+        <div class="container" style="height:750px;width: 100%;">
+            
+            <div class="banner" style="background-image: linear-gradient(to right,DodgerBlue,MediumSeaGreen,yellowgreen);width: 92rem;height: 20rem; margin-left: -11.5rem;margin-top: -1.5rem;margin-bottom: 3rem;">
+            <h2 style="text-align: center;font-size: 2.3rem;font-family:Baskerville;margin-bottom: 2rem;color:wheat;padding-top: 3rem;">
+                All India Government Helpline </h2>
+                
+            <div class="container" style="margin-left: 27rem; margin-top: 8rem;">
+                <h5 style="padding-left: 12rem; color: wheat;font-family:Merienda;font-style: oblique;">We are Here To Help!</h5>
+                <form action="https://www.google.com/search" method="get" class="search-bar">
+                <input type="text" placeholder=" search anything" name="q" style="height: 3rem;width: 35rem; border-radius: 25px 25px 25px 25px;font: 1em sans-serif;border-color: whitesmoke;margin-bottom: 3rem;cursor: pointer; ">
+                <button type="submit"><img src="{%static 'image/search_img.webp' %}" width="45px" height="45px" style=" margin-left:-1rem;margin-top:-1.5rem; position: absolute; text-decoration: none;"></button>
+                </form>
+            </div>
+        
+            </div>
+            <h4 style="position: absolute;margin-left: -6rem;margin-right: 850px;text-align: justify; font-size: 1.3rem;color: gray;font-weight: bolder;font-family:Merienda;">Government Helpline Numbers List:</h4>
+            <p style="position: absolute;margin-left: -6rem;margin-right: 850px;text-align: justify; font-size: 1.3rem;text-indent: 10%;color: gray;margin-top: 3rem;font-family:Merienda;font-style: oblique;"> There are some government emergency contact numbers which can be made a call on during various problems. You need not panic when in an emergency or in a problem. Save all the numbers in your phone contact list.</p>
+            <img src="{%static 'image/img5.jpg' %}" height="150px" width="150px" style="position: absolute;margin-left: 1rem;margin-top: 12rem;">
+               <!-- 
+
+
+                
+                
+                <img src="img3.jpg" height="300px" width="300px" style="position: absolute;margin-left: -10rem;margin-top: 25rem;">
+                <img src="img6.jpg" height="300px" width="300px" style="position: absolute;margin-left: 60rem;">
+                <img src="img7.jpg" height="300px" width="300px" style="position: absolute;margin-left: 60rem;margin-top: 25rem;">
+               
+                <img src="4.jpg" height="300px" width="300px" style="position: absolute;margin-left: -10rem;margin-top: 55rem;">
+                <img src="5.jpg" height="300px" width="300px" style="position: absolute;margin-left: 60rem;margin-top: 47rem;">
+                
+                <img src="1.jpg" height="200px" width="200px" style="position: absolute;margin-left: 65rem;margin-top: 70rem;">
+                <img src="8.jpg" height="300px" width="300px" style="position: absolute;margin-left: 60rem;margin-top: 95rem;">
+                <img src="6.jpg" height="300px" width="300px" style="position: absolute;margin-left: -10rem;margin-top: 95rem;">
+
+                -->
+
+
+
+        <div class="outer-wrapper">
+            <div class="inner-wrapper">
+
+            <table>
+                
+                    <th colspan="2"><marquee bahaviour="scroll" direction="left">List of Emergency Helpline Numbers All Over India</marquee></th>
+                    <tr>
+                        <td>National Emergency Number</td>
+                        <td>112</td>
+                    </tr>
+                    <tr>
+                        <td>Police</td>
+                        <td>100</td>
+
+                    </tr>
+                    <tr>
+                        <td>Fire</td>
+                        <td>101</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Ambulance</td>
+                        <td>102</td>
+                    </tr>
+
+                    <tr>
+                        <td>Traffic Police</td>
+                        <td>103</td>
+                    </tr>
+
+                    <tr>
+                        <td>Women Helpline</td>
+                        <td>1091</td>
+                    </tr>
+
+                    <tr>
+                        <td>Aids Helpline</td>
+                        <td>1097</td>
+                    </tr>
+
+                    <tr>
+                        <td>Disaster Management / Medical Helpline</td>
+                        <td>109</td>
+                    </tr>
+
+                    <tr>
+                        <td>Indian Railway General Enquiry</td>
+                        <td>131</td>
+                    </tr>
+
+                    <tr>
+                        <td>Railway Enquiry</td>
+                        <td>139</td>
+                    </tr>
+
+                    <tr>
+                        <td>Telephone Complaint Booking</td>
+                        <td>199</td>
+                    </tr>
+
+                    <tr>
+                        <td>Anti Corruption Helpline</td>
+                        <td>1031</td>
+                    </tr>
+
+                    <tr>
+                        <td>Emergency Relief Centre on National Highways</td>
+                        <td>1033</td>
+                    </tr>
+
+                    <tr>
+                        <td>Anti Poison</td>
+                        <td>1069</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Train Accident</td>
+                        <td>1011</td>
+                    </tr>
+
+                    <tr>
+                        <td>Road Accident</td>
+                        <td>1073</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>Earth Quake Helpline Service</td>
+                        <td>1092</td>
+                    </tr>
+
+                    <tr>
+                        <td>LPG Emergency Helpline number</td>
+                        <td>1906</td>
+                    </tr>
+
+                    <tr>
+                        <td>Air Accident</td>
+                        <td>1011</td>
+                    </tr>
+
+                    <tr>
+                        <td>Child Abuse Hotline</td>
+                        <td>1098</td>
+                    </tr>
+
+                    <tr>
+                        <td>Blood Bank Information</td>
+                        <td>1910</td>
+                    </tr>
+
+                    <tr>
+                        <td>Eye Donation / Eye Bank Information Service</td>
+                        <td>1919</td>
+                    </tr>
+
+                    <tr>
+                        <td>Kisan Cell Center</td>
+                        <td>1551</td>
+                    </tr>
+                    <tr>
+                        <td>Aadhar Card (UIDAI)</td>
+                        <td>1947</td>
+                    </tr>
+
+                    <tr>
+                        <td>Election Commission of India</td>
+                        <td>1950</td>
+                    </tr>
+
+                    <tr>
+                        <td>National Consumer Helpline</td>
+                        <td>1800-11-4000</td>
+                    </tr>
+
+                    <tr>
+                        <td>Tourist Helpline</td>
+                        <td>1363 / 1800111363</td>
+                    </tr>
+
+                    <tr>
+                        <td>Senior Citizen Helpline</td>
+                        <td>	1091, 1291</td>
+                    </tr>
+
+                    <tr>
+                        <td>Corona Virus (COVID-19) Helpline</td>
+                        <td>1075 / 011-23978046 / +91-11-23978046
+                        </td>
+                    </tr>
+
+            </table>
+            </div>
+            </div>
+            
+        </div>
+       </section> 
+  
+</body>
+</html>
