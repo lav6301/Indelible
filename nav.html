@@ -1,0 +1,218 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDELIBILE</title>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+     
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+<!-- 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>  -->
+<link rel="stylesheet" href="{%static 'css/nav.css' %}">
+<style>
+  
+  .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("{% static 'image/logo.jpg' %}");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 0 20px;
+  position: relative;
+}
+</style>
+
+</head>
+<body>
+
+ <div class="wrapper">
+    <nav>
+        <input type="checkbox" id="show-search">
+        <input type="checkbox" id="show-menu">
+        <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>  
+      <div class="content">
+        <div class="logo"><a href="#">INDELIBLE</a></div>
+        <ul class="links">
+            <li><a href="#">Home</a></li>
+           
+            <li><a href="{%url 'about1' %}">About</a></li>
+            
+            <li>
+                <a href="#" class="desktop-link">Scheme</a>
+                <input type="checkbox" id="show-scheme">
+                <label for="show-scheme" >Scheme</label>
+                <ul>
+                    <li><a href="{%url 'pmay' %}">PMAY</a></li>
+                    <li><a href="{%url 'pmmvy' %}">PMMVY</a></li>
+                    <li><a href="{%url 'diff' %}">Differently Abled</a></li>
+                    <li><a href="{%url 'unemp' %}">UYEGP</a></li>
+                    <li><a href="{%url 'merit' %}">MEGP</a></li>
+          
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="desktop-link">Govt_Docs</a>
+                <input type="checkbox" id="show-Identifications">
+                <label for="show-Identifications" >Govn_Docs</label>
+                <ul>
+                    <li><a href="{%url 'birth' %}">Birth Certificate</a></li>
+                    <li><a href="{%url 'death' %}">Death Certificate</a></li>
+                    <li><a href="{%url 'marry' %}">Marriage Certificate</a></li>
+                    <li><a href="{%url 'communt' %}">Community Certificate</a></li>
+                       
+                </ul>
+            </li>
+           
+            <li><a href="{%url 'ngo' %}" >Ngo</a></li>
+            <li><a href="{%url 'help' %}">Helpline</a></li>
+
+            <li>
+                <a href="{%url 'index' %}" class= "desktop-link">Law</a>
+                    <input type="checkbox" id="show-law">
+                <label for="show-law" >Law</label>
+                <ul>
+                    <li><a href="{%url 'child' %}">Child</a></li>
+                    <li><a href="{%url 'claw' %}">Common Law</a></li>
+                    <li><a href="{%url 'woman' %}">Woman</a></li>
+                    <li><a href="{%url 'human' %}">Woman</a></li>
+                </ul>
+
+            </li>
+
+            <li><a href="{%url 'fir' %}">Login</a></li>
+            <li><a href="{%url 'form' %}">Form</a></li>
+
+        </ul>
+       </div>
+       <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+       <form action="https://www.google.com/search" method="get" class="search-box">
+        <input type="text" placeholder="Type Something to Search...." required>
+        <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+       </form>
+    </nav>
+</div>
+    
+<!-- images of web page  -->
+  
+<div class="container">
+ 
+</div>
+<!-- text -->
+ 
+  <div class="row">
+    
+    <div class="col">
+        <div class="bottom-left">
+        <h1>INDELIBLE</h1><br>
+        <p>INVISIBLE TO EYES,VISIBILE TO YOUR RIGHT</p>
+        <button type="button"><a href="{%url 'index' %}">Explore</a></button>
+    </div>
+</div> 
+
+<div class="tainer">
+    <!-- First line, 2 cards on the right side -->
+     <div class="card">
+      <a href="{%url 'tha' %}"></a>
+      <img src="{%static 'image/law.jpeg' %}" alt="Image 1">
+      <div class="card-body">
+        <h1 class="card-title">COMMON LAW</h1>
+        <p class="card-sub-title">"The first duty of society is justice".</p>
+        <p class="card-info">want to know more about law </p>
+        <button class="card-btn">Read More</button>
+      </div>
+    </div>
+    <div class="card">
+      <a href="{%url 'pmay' %}"></a>
+      <img src="{%static 'image/scheme.jpeg' %}" alt="Image 2">
+      <div class="card-body">
+        <h1 class="card-title">Scheme</h1>
+        <p class="card-sub-title">"Schemes are not just policies;they are promises fulfilled,
+          ensuring development for every corner of the nation"</p>
+        <!-- <p class="card-info">want to know more about law </p> -->
+        <button class="card-btn">Read More</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tainer"> 
+    <!-- Second line, 2 cards on the right side -->
+     <div class="card">
+      <a href="{%url 'ngo' %}"></a>
+      <img src="{%static 'image/ngo.jpeg' %}" alt="Image 3">
+      <div class="card-body">
+        <h1 class="card-title">ngo</h1>
+        <p class="card-sub-title">"NO ONE IS USELESS IN THIS WORLD,
+          WHO LIGHTENS THE BURDENS OF ANOTHER."</p>
+        <p class="card-info">want to know more about law </p>
+        <button class="card-btn">Read More</button>
+      </div>
+    </div>
+    <div class="card">
+      <a href=""></a>
+      <img src="{%static 'image/law.jpeg' %}" alt="Image 4">
+      <div class="card-body">
+        <h1 class="card-title">Identified card</h1>
+        <p class="card-sub-title">"Identification cards not just pieces of paper;its Identification of citizens "</p>
+        <p class="card-info">want to know more about law </p>
+        <button class="card-btn">Read More</button>
+      </div>
+    </div>
+  </div>
+  
+</div> <br>
+
+
+
+<center><h2>Necessary things that every citizens should know</h2></center>
+<br><br><br><br>
+<center><h1>THE CONSTITION OF INDIA</h1></center>.<br>
+<div class="hello">
+<!-- coded for rights -->
+<div class="main">
+<!-- <h4>Constitution of india</h4> -->
+ <img src="{%static 'image/premble.jpeg' %}" width="400px", height="500px">  
+ <div class="text">
+     <p>The Constitution of India is the supreme law of the country, adopted on January 26, 1950. It serves as the framework for the political system, defines the rights and duties of citizens, and establishes the structure of the government. The purpose is to ensure justice, liberty, equality, and fraternity. It outlines the powers and functions of different branches of government and provides a comprehensive set of principles guiding the nation. The Constitution acts as a bulwark for protecting
+       individual freedoms and fostering a democratic and inclusive society.</p><br>
+      <p><span>We th people of india,</span>having solemnly resolved to constitute India into a 
+        <span>sovereign democratic republic</span>and to secure to all its citizens:<span>Justice,</span>
+      social,economic and political;
+    <span>Equality</span>of status and opportunity:and to promote among them allows
+  <span>Fraternity</span>assuring the dignity of the individual and the unity of the nation
+<span>In our constituent assembly </span>this twenty-sixth day of november,1949,do<span>hereby adopt,enact and give to
+  ourselves this Constitution.</span></p>
+
+  <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+  <script>
+    window.botpressWebChat.init({
+        "composerPlaceholder": "chat with common man",
+        "botConversationDescription": "This is indelible website",
+        "botId": "d468032b-f20b-4f83-8348-a8666baedc68",
+        "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+        "messagingUrl": "https://messaging.botpress.cloud",
+        "clientId": "d468032b-f20b-4f83-8348-a8666baedc68",
+        "webhookId": "10d83ddb-c928-41a9-a4fd-e4282a8c734e",
+        "lazySocket": true,
+        "themeName": "prism",
+        "botName": "common man",
+        "avatarUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngegg.com%2Fen%2Fsearch%3Fq%3Drobot%2Bface&psig=AOvVaw2VJVPAytwrj_2ok7fyZ0YH&ust=1700748453340000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIiG_dXj14IDFQAAAAAdAAAAABAE",
+        "stylesheet": "https://webchat-styler-css.botpress.app/prod/9607a74c-f105-4e9d-807e-6718fb637f22/v54993/style.css",
+        "frontendVersion": "v1",
+        "theme": "prism",
+        "themeColor": "#2563eb"
+    });
+  </script>
+
+      
+</body>
+</html>

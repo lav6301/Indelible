@@ -1,0 +1,165 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="stylesheet" href="{%static 'css/about.css' %}">
+    <style>
+        
+.content .links li:hover ul{
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3e ease;
+  backface-visibility: hidden;
+}
+
+.content .links ul li a{
+ display: block;
+ width: 100%;
+ line-height: 30px;
+ border-radius: 0px!important;
+ text-decoration: none;
+ backface-visibility: hidden;
+ overflow-y: hidden;
+ background: #171c24;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <nav>
+            <input type="checkbox" id="show-search">
+            <input type="checkbox" id="show-menu">
+            <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>  
+          <div class="content">
+            <div class="logo"><a href="#">INDELIBLE</a></div>
+            <ul class="links" style="padding-left: 5rem;overflow-y: hidden;background-color: #171c24;">
+                <li><a href="{%url 'nav' %}">Home</a></li>
+                <li><a href="">About</a></li>
+                <li>
+                    <a href="#" class="desktop-link">Scheme</a>
+                    <input type="checkbox" id="show-scheme">
+                    <label for="show-scheme" >Scheme</label>
+                    <ul>
+                        <li><a href="{%url 'pmay' %}">PMAY</a></li>
+                        <li><a href="{%url 'pmmvy' %}">PMMVY</a></li>
+                        <li><a href="{%url 'diff' %}">Differently Abled</a></li>
+                        <li><a href="{%url 'unemp' %}">UYEGP</a></li>
+                        <li><a href="{%url 'merit' %}">MEGP</a></li>
+              
+                    </ul>
+                </li>/
+                <li>
+                    <a href="#" class="desktop-link">Govt_Docs</a>
+                    <input type="checkbox" id="show-Identifications">
+                    <label for="show-Identifications" >Govn_Docs</label>
+                    <ul>
+                    <li><a href="{%url 'birth' %}">Birth Certificate</a></li>
+                     <li><a href="{%url 'death' %}">Death Certificate</a></li>
+                     <li><a href="{%url 'marry' %}">Marriage Certificate</a></li>
+                     <li><a href="{%url 'communt' %}">Community Certificate</a></li>
+              
+                    </ul>
+                </li>
+               
+                <li><a href="{%url 'ngo' %}" >Ngo</a></li>
+                <li><a href="{%url 'help' %}" >Helpline</a></li>
+    
+                <li>
+                    <a href="#" class= "desktop-link">Law</a>
+                        <input type="checkbox" id="show-law">
+                    <label for="show-law" >Law</label>
+                    <ul style="overflow: hidden;">
+                        <li><a href="{%url 'child' %}">Child</a></li>
+                        <li><a href="{%url 'claw' %}">Common Law</a></li>
+                        <li><a href="{%url 'woman' %}">Woman</a></li>
+                        <li><a href="{%url 'human' %}">Woman</a></li>
+                    </ul>
+    
+                </li>
+    
+                <li><a href="#">login</a></li>
+                <li><a href="#">Form</a></li>
+            </ul>
+           </div>
+           <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+       <form action="https://www.google.com/search" method="get" class="search-box">
+        <input type="text" placeholder="Type Something to Search...." required>
+        <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+       </form>
+        </nav>
+    </div>
+
+
+
+    <!-- coded start webpage -->
+    <div class="heading">
+        <h1 style="position: fixed; margin-top: 25rem;">About us</h1>
+        <p style="position: fixed;margin-top: 34rem;">INDELIBLE - Invisible to eyes ,Visible to Rights.</p>
+       </div>
+       
+     <div class="container">
+        <section class="about"> 
+         <div class="about-image" style="margin-top: 15rem;">
+            <img src="{%static 'image/logo.jpg' %}">
+         </div>
+         
+         <div class="about-content" style="margin-top: 16rem;">
+            
+            
+   
+           <marquee behavior="scroll" direction="up"height=500px style="top: 0px;"> <p  style="text-indent: 5%;text-align:justify;">first of all indelible is a word which refers to not easily erased or strong mark . 
+                this portal have been named indelible on which to resembles 
+                the mark which we used in the elections for a symbol of expressing our vote <br></p>
+                <p  style="text-indent: 5%;text-align:justify;">our vote is a right which have been given by our democracy to rule 
+                ourselves by selecting right candidate 
+                this right is been used once in a 5 year and it is an routine cycle of our democracy 
+                the indelible mark can be attained by in a certain time, period.</p><br>
+                <p  style="text-indent: 5%;text-align:justify;">Everyone have certain rights and duties which have been given by the constitution of our country 
+                this portal tell us that the indelible mark Has a great power 
+                and this power comes with a responsibility of using it right and 
+                 also knowing the right way to ue the power 
+                the people have been given with many schemes , act , laws, 
+                constitution remedies with each and everyone is provided with 
+                this website is to provide an knowledge to people who have been 
+                ignorant of their right and duties which have been they should know <br>
+            <strong>Scheme:</strong><br>
+            Welcome to our Government Schemes section, your gateway to a world of opportunities. 
+            We're here to simplify complex information, guiding you through diverse 
+            schemes that promote inclusivity and prosperity. Explore, understand,
+             and empower yourself with the knowledge to make informed choices for a brighter future.<br>
+            <strong>Govt_Docs:</strong><br>
+            Discover a wealth of information on required documents 
+            such as Aadhar card and voter ID. We guide you through the documentation process,
+             ensuring clarity on submission methods both online and offline. 
+             Your convenience is our priority.<br>
+            <strong>Legal insight:</strong><br>
+            Explore your rights and duties as an Indian citizen through our Legal Insights section.
+             From fundamental rights and 
+            duties to crucial aspects of labor, consumer, women's, and child laws,
+             we aim to empower you with knowledge that matters.<br>
+                
+            <strong>NGOs:</strong><br>
+            In collaboration with NGOs, we bring you information on healthcare services, with details on National Health Insurance 
+            (NHI) and associated programs. Stay informed about the initiatives and resources available for your well-being.<br>
+            <strong>Helpline Services</strong><br>
+            Our commitment extends beyond information – we offer support through dedicated helpline services. Find assistance and answers to your queries, ensuring a seamless experience in accessing government services.
+            
+                </marquee>
+           </p>
+       
+             <!-- <a href="#" class="read-more">Read More</a> -->
+         
+         </div>
+        </section>
+     </div>
+    </div>
+    <br><br><br>
+
+</body>
+</html>

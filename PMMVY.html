@@ -1,0 +1,784 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="C:\Users\shiny\OneDrive\Documents\python main project(esevai webpage)\esevai.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+  @import url('https://fonts.googleapis.com/css?family=Poppins');
+* {
+    margin: 0;
+   
+    padding: 0;
+    color:black;
+    font-family: 'Poppins';
+    line-height: 2rem;
+}
+body
+{
+    background:linear-gradient(to right, white,whitesmoke,#dadae2ba,rgb(128, 183, 236));
+    height: 40vh; ;
+
+}
+.box
+{
+    
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+/*
+ .hexagon
+ {
+    height: 0;
+    width: 150px;
+    border-top:150px solid white ;
+    border-right:100px solid yellow ;
+    border-left:100px solid yellow ;
+    position: relative;
+
+ }
+.hexagon::before
+{
+    position: relative;
+    height: 0;
+    width: 150px;
+    border-top:150px solid white ;
+    border-right:100px solid yellow ;
+    border-left:100px solid yellow ;
+    border-bottom:150px ;
+    left: 100px;
+}*/
+
+#animation_img1:hover
+{
+
+    position: absolute;
+    position: absolute;
+    left:-5rem;
+            
+    height:1000px;
+    width:860px;
+    top:-1rem;
+    overflow:hidden;
+    display: block;
+    backface-visibility: hidden;
+    background-color: white;
+
+   }
+
+#animation_img2:hover
+{   
+    position: absolute;
+    left:-5rem;
+    background-image: none;
+   
+    height:1000px;
+    width:860px;
+    top:-1rem;
+    overflow:hidden;
+    display: block;
+    backface-visibility: hidden;
+    background-color: white;
+   }
+
+     #animation_img3:hover
+{
+    position: absolute;
+    left:-5rem;
+            
+    height:1000px;
+    width:860px;
+    top: -1rem;
+    overflow:hidden;
+    display: block;
+    backface-visibility: hidden;
+    background-color: white;
+    
+   }
+   #animation_img:hover
+   {
+    width: 2000px;
+    height: 700px;
+    overflow: animate__animated animate__fadeIn animate__slow animate__repeat-1 animate__delay-1s;
+   }
+
+
+   .wrapper{
+  top: 0;
+  background-color: #171c24;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+ 
+}
+
+.wrapper nav{
+  /* position: relative; */
+ text-decoration: none;
+  display: flex;
+  max-width: calc(100% - 200px);
+   margin: 0 auto;
+   top:0px;
+  height: 70px;
+  text-align: center;
+  justify-content: space-between;
+}
+
+nav .content{
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+nav .content .links{
+  margin-left: 80px;
+  display: flex;
+
+}
+
+.content .logo a{
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.content .links li{
+  list-style: none;
+  /* line-height: 70px; */
+  position: relative;
+ 
+
+}
+
+
+.content .links li a,
+.content .links li label{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  /* background: aquamarine; */
+  padding: 9px 17px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+
+}
+
+.content .links li label{
+  display: none;
+}
+
+.content .links li a:hover,
+.content .links li label:hover {
+  background: #323c4e;
+  text-decoration: none;
+  
+}
+
+.wrapper .search-icon,
+.wrapper .menu-icon{
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 70px;
+  width: 70px;
+  text-align: center;
+
+
+}
+
+.wrapper .menu-icon{
+  display: none;
+}
+
+
+
+wrapper #show-search:checked ~ .search-icon i::before{
+  content: "\f00d";
+  /* font awesome unicode */
+}
+
+
+
+.wrapper .search-box{
+  padding-top: 10px;
+  position: absolute;
+  height: 100%;
+  max-width: calc(100% - 50px);
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3e ease;
+
+}
+
+.wrapper #show-search:checked ~ .search-box{
+  opacity: 1;
+  pointer-events: auto;
+
+
+}
+
+.search-box input{
+  /* padding-top: 10px; */
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  color: #fff;
+  background: #171c24;
+  padding: 0 100px 0 15px;
+
+}
+
+.search-box input::placeholder{
+  color: #f2f2f2;
+}
+
+.search-box .go-icon{
+  text-align: center;
+  position: absolute;
+  right: 10px;
+  padding: 20px;
+  top: 45%;
+  overflow: hidden;
+  transform: translateY(-50%);
+  line-height: 37px;
+  width: 80px;
+  background: #171c24;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.wrapper input[type="checkbox"]{
+  display: none;
+}
+
+/* dropdown menu code start */
+
+.content .links ul{
+  position: absolute;
+  background: #171c24;
+  top:100%;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  width: 200px;
+  padding: 10px;
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+}
+
+.content .links li:hover ul{
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3e ease;
+
+}
+
+.content .links ul li a{
+ display: block;
+ width: 100%;
+ line-height: 30px;
+ border-radius: 0px!important;
+}
+
+/* .hide{
+  display: none;
+} */
+
+
+
+
+
+
+
+
+
+
+/* responsive code start */
+
+@media screen and (max-width: 1250px){
+  .wrapper nav{
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  nav .content .links{
+    margin-left: 30px;
+  }
+ 
+  .content.links li a{
+    padding: 8px 13px;
+  }
+
+  .wrapper .search-box{
+    max-width: calc(100%-100px);
+  }
+
+  .wrapper .search-box input{
+   padding: 0 100px 0 15px;
+  }
+  
+}
+
+@media screen and (max-width:900px){
+  .wrapper .menu-icon{
+    display: block;
+  }
+.wrapper #show-menu:checked ~.menu-icon i::before{
+  content: "\f00d";
+}
+  nav .content .links{
+    display: block;
+    position: fixed;
+    background: #14181f;
+    height: 100%;
+    width: 100%;
+    top: 70px;
+    left: -100%;
+    margin-left:0;
+    max-width: 350px;
+    text-align: justify;
+    padding-bottom: 100px;
+    transition: all 0.3e ease;
+    overflow-y: auto;
+    
+  }
+
+nav #show-menu:checked ~ .content .links{
+   left: 0;
+}
+
+.content{
+  align-items: center;
+  background-color: #2b2e33;
+}
+
+  .content .links li{
+    margin: 15px 20px;
+  }
+
+  .content .links li a,
+  .content .links li label{
+   line-height: 40px;
+   font-size: 20px;
+   display: block;
+   padding: 8px 18px;
+   cursor: pointer;
+   
+  }
+  
+  .content .links li a.desktop-link{
+    display: none;
+  }
+
+  .row .col h1,p , button{
+    display:none;
+  }
+
+  .heading h1{
+    display: none;
+  }
+
+
+
+
+  /* #show-screen:checked ~ .heading h1,
+  #show-Identifications:checked ~ .heading h1 {
+    display: none;
+  } */
+  
+ /* dropdown responsive code star */
+ 
+ .content .links ul{
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  background: none;
+  max-height: 0px;
+  overflow: hidden;
+
+ }
+
+ .content .links #show-scheme:checked ~ ul,
+ .content .links #show-Identifications:checked ~ ul,
+ .content .links #show-law:checked ~ ul{
+  max-height: 100vh;
+ }
+
+ .content .links ul li{
+  margin: 7px 20px;
+  
+ }
+
+ .content .links ul li a{
+  font-size: 18px;
+  line-height: 30px;
+  border-radius: 5px!important;
+
+ }
+
+ 
+
+ @media screen and (max-width:400px){
+  .wrapper nav{
+    padding: 0 10px;
+  }
+  .content .logo a{
+    font-size: 27px;
+  }
+ }
+
+ .wrapper .search-box{
+  max-width: calc(100%-50px);
+}
+
+.wrapper .search-box .go-icon{
+width: 30px;
+right: 0;
+}
+.wrapper .search-box input{
+  padding-right: 30px;
+}
+
+
+
+}
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <nav>
+            <input type="checkbox" id="show-search">
+            <input type="checkbox" id="show-menu">
+            <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>  
+          <div class="content" style="margin-top: -6rem;padding: 7rem;background:none;">
+            <div class="logo"><a href="#">INDELIBILE</a></div>
+            <ul class="links" style="top:0px;padding-top: -5rem;">
+                <li><a href="{%url 'nav' %}">Home</a></li>
+                <li><a href="{%url 'about1' %}">About</a></li>
+                <li>
+                    <a href="#" class="desktop-link">Scheme</a>
+                    <input type="checkbox" id="show-scheme">
+                    <label for="show-scheme" >Scheme</label>
+                    <ul  style="top:3rem;">
+                        <li><a href="{%url 'pmay' %}">PMAY</a></li>
+                    <li><a href="{%url 'pmmvy' %}">PMMVY</a></li>
+                    <li><a href="{%url 'diff' %}">Differently Abled</a></li>
+                    <li><a href="{%url 'unemp' %}">UYEGP</a></li>
+                    <li><a href="{%url 'merit' %}">MEGP</a></li>
+              
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="desktop-link">Govt_Docs</a>
+                    <input type="checkbox" id="show-Identifications">
+                    <label for="show-Identifications" >Govt_Docs</label>
+                    <ul style="top:3rem;">
+                    <li><a href="{%url 'birth' %}">Birth Certificate</a></li>
+                    <li><a href="{%url 'death' %}">Death Certificate</a></li>
+                    <li><a href="{%url 'marry' %}">Marriage Certificate</a></li>
+                    <li><a href="{%url 'communt' %}">Community Certificate</a></li>
+              
+                    </ul>
+                </li>
+               
+                <li><a href="{%url 'ngo' %}">Ngo</a></li>
+                <li><a href="{%url 'help' %}">Helpline</a></li>
+    
+                <li>
+                    <a href="#" class= "desktop-link">Law</a>
+                        <input type="checkbox" id="show-law">
+                    <label for="show-law" >Law</label>
+                    <ul style="top:3rem;">
+                        <li><a href="{%url 'child' %}">Child</a></li>
+                        <li><a href="{%url 'claw' %}">Common Law</a></li>
+                        <li><a href="{%url 'woman' %}">Woman</a></li>
+                        <li><a href="{%url 'human' %}">Woman</a></li>
+                    </ul>
+    
+                </li>
+    
+                <li><a href="#">login</a></li>
+                <li><a href="#">Form</a></li>
+            </ul>
+           </div>
+           <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+           <form action="#" class="search-box">
+            <input type="text" placeholder="Type Something to Search...." required>
+            <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+           </form>
+        </nav>
+    </div>
+
+   
+
+   
+    <section style="margin-top: 10rem;padding-top:3rem;">
+      
+            <div class="row">
+                
+             
+            
+             <center><h2 style="color: brown;position: absolute;margin-top:-4rem;margin-left: 25rem;">Pradhan Mantri Matru Vandana Yojana (PMMVY) </h2></center>
+             <hr class="h" style="width: 100%;height: 8px; color: black;">
+     
+
+             
+
+
+             <div class="row"  style="margin-left: 3rem; margin-top: 2rem;">
+                        <div class="col-md-4">
+                    
+                            <div class="image" style="position: relative; display: flex;">
+                                <img src="{%static 'image/pmmvy-top1.png' %}" width="400px" height="350px">
+                            </div>
+                        </div>
+                
+                        <div class="col-md-7">
+                        
+                            <marquee direction="up" behaviour="scroll" height="350px" bgcolor="white" scrolldelay="85"> 
+                            <h5 style="text-indent: 10%;margin-left: 4rem;margin-right: 2rem; font-size: 1rem;line-height: 2rem;text-align: justify;"> Pradhan Mantri Matru Vandana Yojana – PMMVY is a maternity benefit programme offered by the government of India under which a cash incentive of Rs. 5,000 is provided to pregnant women and lactating mothers. The incentive is provided for the first living child of the family for fulfilling the specific maternal and child health conditions.
+                            <br>
+                            <br>
+                            To provide compensation for the wage loss in terms of cash incentives so that the woman can take adequate rest before and after delivery of the first living child. It is a partial compensation which is a part of a plan to provide a total sum of Rs. 6,000 on an average to the woman. The remaining cash incentive (of Rs. 1,000) is provided under Janani Suraksha Yojana (JSY) after institutional delivery.
+                            <br>
+                            <br>
+                            To improve health seeking behaviour amongst pregnant women and lactating mothers. </h5>
+                            </marquee>
+                        
+
+                        <a href="https://pmmvy.wcd.gov.in/apk/PMMVYsoft.apk"><input type="button" name="DownloadPMMVYApp" value="Download PMMVY App" style="background-color: #018D84;height: 3rem; width: 220px; border-top-left-radius: 10px;border-bottom-right-radius: 2rem; position: relative;margin-top: 5rem;margin-left: 16rem;color: white;"></a>
+                        </div>
+
+
+
+                </div>
+
+            <hr class="h" style="width: 100%;height: 8px; color: black;">
+            
+                <div class="row">
+                    <h6 style=" background-color: #018D84; width: 94rem;">
+                        <marquee direction="left" behaviour="scroll" width="100%" style="color: white;">Online Procedure for Availing Maternity Benefits Under PMMVY</marquee></h6>
+                </div>
+                <div class="row" style="margin-top: 2rem;">
+                      <div class="col-md-5" style="margin-left: 3rem;">
+                            <h6 class="steps">
+                            <b>Step: 1 -</b>Visit https://pmmvy-cas.nic.in and log in into the PMMVY software using the scheme facilitator’s (AWC/approved health facility) login details.<br><br>
+                            <hr class="h" style="width: 100%;height: 8px; color: black;">
+                            
+                            <b>Step: 2 -</b> Click on ‘New Beneficiary’ tab for registering under the scheme by filling in the details as per the Beneficiary Registration Form (also called Application Form 1A). You can follow the instructions provided in PMMVY CAS User Manual for filling the form.</h6>
+
+                            <hr class="h" style="width: 100%;height: 8px; color: black;">
+                            
+                            <h6 class="steps"><b>Step: 3 -</b>  After 6 months of pregnancy, again log in into the PMMVY CAS software and click on ‘Second Instalment’ tab and fill Form 1B following the instructions given in the user manual.</h6>
+
+                            <hr class="h" style="width: 100%;height: 8px; color: black;">
+
+                            <h6 class="steps"><b>Step: 4 -</b> After the birth of the child and the completion of his/her first cycle of immunization of  CG, OPV, DPT and Hepatitis B, log in into the PMMVY CAS software and click on ‘Third Instalment’ tab and fill Form 1C following the instructions given in the user manual.<br></h6>
+
+                        </div>
+                        <div class="col-md-5">
+                            <div class="video1">
+                               <!-- <iframe width="760" height="435" src="https://www.youtube.com/embed/gjoyWmBYT_8?si=hqPAatZG1qKaZfR4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
+                               <embed src="{%static 'image/pmmvynew1.mp4' %}" width="760" height="435" >
+
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top:-1rem">
+           
+                            <marquee direction="left" behaviour="scroll" width="94%" style="color: red; margin-top: 2rem;"><h5>Note  : To know the documents required at each of the stages please refer to the ‘Offline Procedure for Availing Maternity Benefits Under PMMVY’ section given above.</h5></marquee>
+                        </div>
+
+                        
+                 </div>
+       
+    </section>
+
+
+    <hr class="h" style="width: 100%;height: 8px; color: black; margin-top: 2rem;">
+    
+
+    <section>
+        <div class="row">
+            
+            <h3 style=" background-color: #018D84; width: 93rem; font-size: 1rem;"><marquee direction="left" behaviour="scroll" width="98%" style="color: white;"> Offline Procedure for Availing Maternity Benefits Under PMMVY</marquee></h3>
+            <div class="row" style="margin-left: 5rem;margin-right: 3rem;">
+
+
+                <div class="col-md-7">
+
+                    <div class="box" id="animation_img"  style="border: black; background-color:gainsboro; margin-left: -4rem;height: 360px;width: 850px;">
+                                    <img src="{%static 'image/offline-form.png' %}" id="animation_img1" height="300px"width="250px" style="margin-top: 0.5rem;margin-left:1rem;">
+                                    
+                                
+                                    
+                                    <img src="{%static 'image/offline-form2.png' %}" id="animation_img2" height="300px"width="250px"style="margin-left:1rem; ">
+                                   
+                                   
+                                    <img src= "{%static 'image/offline-form3.jpg' %}" id="animation_img3"  height="300px"width="300px" style="margin-left:1rem; margin-right: 0.5rem;">
+                    </div>
+                           
+                <!-- <img src="pmmvy_image1.jpeg" style="position: absolute;
+            left: 1rem;
+            margin-top:27rem;
+            margin-left:1rem;
+            top: 0;
+            width: 400px;
+            height:300px;">-->
+
+                </div>
+
+                <div class="col-md-5">
+
+                <h6 class="steps"><b>Step 1: </b>
+                    Visit the nearest Anganwadi Centre (AWC) or an approved government health facility that implements the PMMVY scheme.
+                </h6>
+                <hr class="h" style="width: 100%;height: 8px; color: black; margin-top: 2rem;">
+                <h6 class="steps"><b>Step 2: </b>
+                    Obtain the application form either from the AWC or download Form 1A from the official website (https://pmmvy-cas.nic.in).
+                </h6>
+                <hr class="h" style="width: 100%;height: 8px; color: black; margin-top: 2rem;">
+                <h6 class="steps"><b>Step 3: </b>
+                    Fill in the required beneficiary details, husband's information, address, mobile number, Last Menstrual Period (LMP) date, bank account details, etc. Complete the form and submit it at the AWC or the approved health facility.
+                </h6>
+                <hr class="h" style="width: 100%;height: 8px; color: black; margin-top: 2rem;">
+                <h6 class="steps"><b>Step 4: </b>
+                    The supervisor will verify the information provided in the application form.
+                </h6>
+                <hr class="h" style="width: 100%;height: 8px; color: black; margin-top: 2rem;">
+                <h6 class="steps"><b>Step 5: </b>
+                    Upon successful verification, you will receive an acknowledgement copy from the Anganwadi Worker (AWW), Accredited Social Health Activist (ASHA), or Auxiliary Nurse & Midwife (ANM). This confirms that your registration for the Pradhan Mantri Matru Vandana Yojana has been successfully completed.
+                    
+                </h6>
+                <hr class="h" style="width: 100%;height: 8px; color: black; margin-top: 2rem;">
+                <a href="https://wcd.nic.in/schemes/pradhan-mantri-matru-vandana-yojana"><input type="button" value="read" style="background-color: #018D84;height: 3rem; width: 220px; border-top-left-radius: 10px;border-bottom-right-radius: 2rem; position: relative;margin-top: 1rem;margin-left: 16rem;color: white;"></a>
+
+                <marquee direction="left" behaviour="scroll" style="color: red; margin-top: 2rem;"><h6><b>Note : </b>By following these steps, you can complete the offline registration process for the Pradhan Mantri Matru Vandana Yojana and avail the benefits of the scheme</h6></marquee>
+
+                </div>
+                
+               
+
+               
+            </div>
+            
+
+        </div>
+    </section>
+
+    <section>
+        <div class="row">
+            <h6  style=" background-color: #018D84; width: 94rem;font-size: 1rem;color: white; padding-left: 2em;"">
+             <!--    <marquee direction="left" behaviour="scroll" width="100%" style="color: white;">-->Which documents are required for enrolling under PMMVY?</marquee></h6>
+            
+        </div>
+        <div class="row"style="margin-left: 3rem;margin-top: 1rem;">
+            
+            <h6 ><b style="color: brown;" >First Installment: Documents to be submitted within 150 days from the last menstrual date:</b></h6>
+            </div>
+            <div class="row" style="margin-left: 3rem;margin-top: 1rem;" >
+                <ul style="margin-left: 5rem;font-style: italic;">
+                <li>Duly filled application Form 1A</li>
+                
+                <li>Copy of MCP card</li>
+                
+               <li> Copy of identity proof</li>
+                
+                <li>Copy of bank or post office account passbook</li>
+                </ul>
+               </div> 
+               <hr class="h" style="width: 100%;height: 8px; color: black; margin-top: 2rem;">
+    
+
+               <div class="row"style="margin-left: 3rem;margin-top: 1rem;" >
+        <h6 ><b style="color: brown;" >Second Installment: Documents to be submitted within 180 days from the last menstrual date:</b></h6>
+        </div>
+
+        <div class="row" style="margin-left: 3rem;margin-top: 1rem;">
+<ul  style="margin-left: 5rem;font-style: italic;">
+           <li> Duly filled application Form 1 B</li>
+            
+           <li>Copy of MCP Card</li></ul>
+            
+</div>
+
+
+<hr class="h" style="width: 100%;height: 8px; color: black; margin-top: 2rem;">
+    
+<div class="row" style="margin-left: 3rem;margin-top: 1rem;">
+           <h6><b style="color: brown;" >Third Installment: Documents to be submitted after registering childbirth</b></h6>
+           </div>
+           <div class="row" style="margin-left: 3rem;margin-top: 1rem;">
+           <ul style="margin-left: 5rem;font-style: italic;">
+           <li>Duly filled application Form 1C</li>
+           
+           <li>Copy of MCP Card</li>
+           
+          <li> Copy of Aadhaar ID</li>
+           
+           <li>Copy of Child</li>
+           <li>Birth Registration Certificate</li>
+           
+           </ul>
+
+
+        </div>
+  
+    
+    </section>
+
+    <section>
+        <div class="row">
+            
+            <h3 style=" background-color: #018D84; width: 94rem;font-size: 1rem;color: white; padding-left: 2em;">
+               <!-- <marquee direction="left" behaviour="scroll" width="100%" style="color: white; font-size: 1rem;">-->Documents Required</marquee></h3>
+            <div class="row">
+            <h6 style="margin-left: 8rem;font-style: italic;line-height: 2rem;">
+                <input type="radio" style="margin-right: 0.5rem;"> filled Application Form 1A<br>
+                <input type="radio"  style="margin-right: 0.5rem;">Copy of MCP card<br>
+                <input type="radio"  style="margin-right: 0.5rem;">Copy of Identity Proof<br>
+                <input type="radio"  style="margin-right: 0.5rem;">Copy of Bank/Post Office Account Passbook<br>
+                <input type="radio"  style="margin-right: 0.5rem;">An undertaking/consent duly signed by the applicant and her husband,<br>
+            </h6>
+
+            
+            <h6><marquee direction="left" behaviour="scroll" style="color: red; margin-top: 0.5rem;">Note : </b>The application form can be obtained from the AWC/approved health facility free of cost or be downloaded from the website of the Ministry of Women and Child Development.<br></marquee></h6>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'>
+
+    </script>
+  
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

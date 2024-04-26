@@ -1,0 +1,562 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="C:\Users\shiny\OneDrive\Documents\python main project(esevai webpage)\esevai.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <style>
+   
+  @import url('https://fonts.google.com/specimen/Libre+Baskerville');
+    body{
+        font-family:Baskerville ;
+        margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+        
+    }
+
+    .wrapper{
+  top: 0;
+  background-color: #171c24;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+ 
+}
+
+.wrapper nav{
+  /* position: relative; */
+ text-decoration: none;
+  display: flex;
+  max-width: calc(100% - 200px);
+   margin: 0 auto;
+  height: 70px;
+  text-align: center;
+  justify-content: space-between;
+}
+
+nav .content{
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+nav .content .links{
+  margin-left: 80px;
+  display: flex;
+
+}
+
+.content .logo a{
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.content .links li{
+  list-style: none;
+  /* line-height: 70px; */
+  position: relative;
+ 
+
+}
+
+
+.content .links li a,
+.content .links li label{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  /* background: aquamarine; */
+  padding: 9px 17px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+
+}
+
+.content .links li label{
+  display: none;
+}
+
+.content .links li a:hover,
+.content .links li label:hover {
+  background: #323c4e;
+}
+
+.wrapper .search-icon,
+.wrapper .menu-icon{
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 70px;
+  width: 70px;
+  text-align: center;
+
+
+}
+
+.wrapper .menu-icon{
+  display: none;
+}
+
+
+
+wrapper #show-search:checked ~ .search-icon i::before{
+  content: "\f00d";
+  /* font awesome unicode */
+}
+
+
+
+.wrapper .search-box{
+  padding-top: 10px;
+  position: absolute;
+  height: 100%;
+  max-width: calc(100% - 50px);
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3e ease;
+
+}
+
+.wrapper #show-search:checked ~ .search-box{
+  opacity: 1;
+  pointer-events: auto;
+
+
+}
+
+.search-box input{
+  /* padding-top: 10px; */
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  color: #fff;
+  background: #171c24;
+  padding: 0 100px 0 15px;
+
+}
+
+.search-box input::placeholder{
+  color: #f2f2f2;
+}
+
+.search-box .go-icon{
+  text-align: center;
+  position: absolute;
+  right: 10px;
+  padding: 20px;
+  top: 45%;
+  overflow: hidden;
+  transform: translateY(-50%);
+  line-height: 37px;
+  width: 80px;
+  background: #171c24;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.wrapper input[type="checkbox"]{
+  display: none;
+}
+
+/* dropdown menu code start */
+
+.content .links ul{
+  position: absolute;
+  background: #171c24;
+  top:100%;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  width: 200px;
+  padding: 10px;
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+}
+
+.content .links li:hover ul{
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3e ease;
+
+}
+
+.content .links ul li a{
+ display: block;
+ width: 100%;
+ line-height: 30px;
+ border-radius: 0px!important;
+}
+
+/* .hide{
+  display: none;
+} */
+
+
+
+
+
+
+
+
+
+
+/* responsive code start */
+
+@media screen and (max-width: 1250px){
+  .wrapper nav{
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  nav .content .links{
+    margin-left: 30px;
+  }
+ 
+  .content.links li a{
+    padding: 8px 13px;
+  }
+
+  .wrapper .search-box{
+    max-width: calc(100%-100px);
+  }
+
+  .wrapper .search-box input{
+   padding: 0 100px 0 15px;
+  }
+  
+}
+
+@media screen and (max-width:900px){
+  .wrapper .menu-icon{
+    display: block;
+  }
+.wrapper #show-menu:checked ~.menu-icon i::before{
+  content: "\f00d";
+}
+  nav .content .links{
+    display: block;
+    position: fixed;
+    background: #14181f;
+    height: 100%;
+    width: 100%;
+    top: 70px;
+    left: -100%;
+    margin-left:0;
+    max-width: 350px;
+    text-align: justify;
+    padding-bottom: 100px;
+    transition: all 0.3e ease;
+    overflow-y: auto;
+    
+  }
+
+nav #show-menu:checked ~ .content .links{
+   left: 0;
+}
+
+.content{
+  align-items: center;
+  background-color: #2b2e33;
+}
+
+  .content .links li{
+    margin: 15px 20px;
+  }
+
+  .content .links li a,
+  .content .links li label{
+   line-height: 40px;
+   font-size: 20px;
+   display: block;
+   padding: 8px 18px;
+   cursor: pointer;
+   
+  }
+  
+  .content .links li a.desktop-link{
+    display: none;
+  }
+
+  .row .col h1,p , button{
+    display:none;
+  }
+
+  .heading h1{
+    display: none;
+  }
+
+
+
+
+  /* #show-screen:checked ~ .heading h1,
+  #show-Identifications:checked ~ .heading h1 {
+    display: none;
+  } */
+  
+ /* dropdown responsive code star */
+ 
+ .content .links ul{
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  background: none;
+  max-height: 0px;
+  overflow: hidden;
+
+ }
+
+ .content .links #show-scheme:checked ~ ul,
+ .content .links #show-Identifications:checked ~ ul,
+ .content .links #show-law:checked ~ ul{
+  max-height: 100vh;
+ }
+
+ .content .links ul li{
+  margin: 7px 20px;
+ }
+
+ .content .links ul li a{
+  font-size: 18px;
+  line-height: 30px;
+  border-radius: 5px!important;
+
+ }
+
+ 
+
+ @media screen and (max-width:400px){
+  .wrapper nav{
+    padding: 0 10px;
+  }
+  .content .logo a{
+    font-size: 27px;
+  }
+ }
+
+ .wrapper .search-box{
+  max-width: calc(100%-50px);
+}
+
+.wrapper .search-box .go-icon{
+width: 30px;
+right: 0;
+}
+.wrapper .search-box input{
+  padding-right: 30px;
+}
+
+
+
+}
+
+
+
+   </style>
+
+</head>
+<body>
+  <div class="wrapper">
+    <nav>
+        <input type="checkbox" id="show-search">
+        <input type="checkbox" id="show-menu">
+        <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>  
+      <div class="content" style="margin-top: -6rem;padding: 7rem;background:none;">
+        <div class="logo"><a href="#">INDELIBLE</a></div>
+        <ul class="links">
+            <li><a href="{%url 'nav' %}">Home</a></li>
+            <li><a href="{%url 'about1' %}">About</a></li>
+            <li>
+                <a href="#" class="desktop-link">Scheme</a>
+                <input type="checkbox" id="show-scheme">
+                <label for="show-scheme" >Scheme</label>
+                <ul>
+                    <li><a href="{%url 'pmay' %}">PMAY</a></li>
+                <li><a href="{%url 'pmmvy' %}">PMMVY</a></li>
+                <li><a href="{%url 'diff' %}">Differently Abled</a></li>
+                <li><a href="{%url 'unemp' %}">UYEGP</a></li>
+                <li><a href="{%url 'merit' %}">MEGP</a></li>
+          
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="desktop-link">Govt_Docs</a>
+                <input type="checkbox" id="show-Identifications">
+                <label for="show-Identifications" >Govt_Docs</label>
+                <ul>
+                <li><a href="{%url 'birth' %}">Birth Certificate</a></li>
+                <li><a href="{%url 'death' %}">Death Certificate</a></li>
+                <li><a href="{%url 'marry' %}">Marriage Certificate</a></li>
+                <li><a href="{%url 'communt' %}">Community Certificate</a></li>
+          
+                </ul>
+            </li>
+           
+            <li><a href="{%url 'ngo' %}">Ngo</a></li>
+            <li><a href="{%url 'help' %}">Helpline</a></li>
+
+            <li>
+                <a href="#" class= "desktop-link">Law</a>
+                    <input type="checkbox" id="show-law">
+                <label for="show-law" >Law</label>
+                <ul>
+                    <li><a href="{%url 'child' %}">Child</a></li>
+                    <li><a href="{%url 'claw' %}">Common Law</a></li>
+                    <li><a href="{%url 'woman' %}">Woman</a></li>
+                    <li><a href="{%url 'human' %}">Woman</a></li>
+                </ul>
+
+            </li>
+
+            <li><a href="#">login</a></li>
+            <li><a href="#">Form</a></li>
+        </ul>
+       </div>
+       <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+       <form action="#" class="search-box">
+        <input type="text" placeholder="Type Something to Search...." required>
+        <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+       </form>
+    </nav>
+</div>
+
+
+    <form>
+
+    <section style="margin-top: 5rem;">
+
+        <div class="container" width="100%">
+       
+        <div class="box" style=" width: 98%;">
+            <h1 style="text-align: center;padding-top: 2rem;
+            padding-bottom: 2rem;color: brown;">Scholarship To Son And Daughter Of Differently Abled Persons</h1>
+             <hr class="h" style="width: 100%;height: 8px; color: black;">
+            <div class="row" style="">
+                
+                
+                <div class="col-md-5">
+                    <h5 style="text-align: center; font-size: 1.9rem; background-color: cadetblue; color:white;backface-visibility: visible;">Details</h5>
+                    <p style="text-indent: 11%;text-align: justify; padding-right: 2rem;padding-top: 2rem; line-height: 2rem;">The "Scholarship to Son and Daughter of Differently Abled Persons" scheme in Tamil Nadu is a government initiative that aims to provide financial assistance to the children of differently abled individuals for their education. The Department implements the scheme for the Welfare of Differently Abled Persons, Government of Tamil Nadu.
+                        The scheme provides financial assistance in the form of scholarships to eligible students. The exact amount and duration of the scholarship may vary based on the level of education and the government's guidelines. The Son/Daughter of persons with disabilities will get financial assistance from Rs.1,000 to Rs.6,000 as Scholarships.
+                        </p>
+
+                </div>
+                <div class="col-md-5"  style="">
+                    <img src="{%static 'image/differentlyabled.jpg' %}" height="450px"width="640px" >
+                    </div>
+                <hr class="h" style="width: 100%;height: 8px; color: black;">
+            </div>
+           
+
+        </div>
+        </div>
+    </section>
+    <section>
+        <div class="container" width="100%" style="margin-top: 2rem;">
+            <h5 style="text-align: center; font-size: 1.9rem;background-color: cadetblue;  color:white;">Benefits</h5>
+            <p style="line-height: 2rem;text-indent: 8%;">The scheme provides financial assistance in the form of scholarships to eligible students. The exact amount and duration of the scholarship may vary based on the level of education and the government's guidelines.</p>
+
+
+        <ul class="list" style=" line-height:3rem;font-size: 1rem;font-style: normal; background-color: beige;" >
+                <li >The daughter studying/Passing in 10th Standard will get Rs.1,000.</li>
+                <li>The Son who has passed in 10th  Standard will get Rs.1,000. </li>
+                <li >The daughter studying 11th Standard will get Rs.1,000. </li>
+                <li >The daughter studying/Passed 12th Standard will get Rs.1,500.</li>
+                <li >The Son who has passed in 12th Standard will get Rs.1,500. </li>
+                <li >The Son/daughter doing the undergraduate course will get Rs.1,500 son/daughter doing the undergraduate course with the hostel facility will get Rs.1,750. </li>
+                <li>The Son/daughter doing the postgraduate course will get Rs.2,000 son/daughter doing the postgraduate course with hostel facility will get Rs.3,000.</li>
+                <li >The Son/daughter doing a professional degree course will get Rs.2,000 son/daughter doing a professional degree course with a hostel facility will get Rs.4,000. </li>
+                <li >The Son/daughter doing a professional Postgraduate course will get Rs.4,000 son/daughter doing professional  </li>
+                <li">The postgraduate course with a hostel facility will get Rs.6,000.</li>
+                <li>I.T.I  or Polytechnic will get Rs.1,000 and I.T.I  or Polytechnic with hostel facility will get Rs.1,200.</li>
+           
+        </ul>
+
+        </div>
+        
+    </section>
+    <section>
+        <div class="container" width="100%" style="margin-top: 2rem;">
+            <h5 style="text-align: center; font-size: 1.9rem;background-color: cadetblue;  color:white;">Eligibility</h5>
+            <div class="row">
+                <div class="col-md-5" style="padding-top: 3rem;"><img src="{%static 'image/differently_Abled_edu.jpeg' %}" height="300px" width="450px"></div>
+                <div class="col-md-6" style="padding-top: 6rem; line-height: 2rem; font-size: 1rem; color: brown;">
+                <ul>
+                    <li>Children of any Differently Abled persons holding the identity card issued by the welfare board for the Differently Abled. </li>
+                    <li style="padding-top: 2rem;">This scholarship is applicable for students studying from Standard 11th to the Postgraduate level, which includes ITI/Polytechnic diploma courses and other higher education programs.</li>
+
+                </ul>
+                
+                </div>  
+            </div> 
+
+        </div>
+    </section>
+
+    <section>
+        <div class="container" width="100%" style="margin-top: 2rem;">
+            <h5 style="text-align: center; font-size: 1.8rem;background-color: cadetblue;  color:white;">Application Process</h5>
+            <div class="row">
+                
+                <div class="col-md-6" style="padding-top: 3rem; line-height: 2rem; font-size: 1rem;">
+                    <b>Step 1:</b> Visit the official website of the Chennai district.<br>
+                    <hr height="1px" width="100%" color="whitesmoke">
+                    <b>Step 2:</b> Click on the Departments. Select Differently Abled Welfare, after selecting click on Differently Abled Welfare Schemes. <br>
+                    <hr height="1px" width="100%" color="whitesmoke">
+                    <b>Step 3:</b> You will land on the List of Scheme page of Differently Abled Welfare Schemes.<br>
+                    <hr height="1px" width="100%" color="whitesmoke">
+                    <b>Step 4:</b> Scroll down to the section "L. Tamilnadu differently abled welfare board schemes". <br>
+                    <hr height="1px" width="100%" color="whitesmoke">
+                    <b>Step 5:</b> Download the application form of the "S.No. 4 Scholarship to son and daughter of differently-abled persons".<br>
+                    
+               
+            </div> 
+            <div class="col-md-5" style="padding-top: 3rem;"><embed src="{%static 'image/new-differently-abled-video_9xoCPih9.mp4' %}" height="400px" width="540px"></div>
+            
+        </div>
+        <marquee behaviour="scroll" direction="left" width="100%" style="color: red; padding-top: 1.5rem;"><b>Note: </b>The application is to be submitted District Differently Abled Welfare Officer.</marquee>
+    </section>
+
+
+    <section>
+        <div class="container" width="100%" style="margin-top: 2rem;">
+            <h5 style="text-align: center; font-size: 1.8rem;background-color: cadetblue;  color:white;">Documents Required</h5>
+            <ol class="list" style=" line-height:3rem;font-size: 1rem;font-style: normal; background-color:whitesmoke; margin-top: 2rem;"type="1" >
+            
+            <li>Medical Certificate with National Disabled Identity Card and Disability Welfare Board registration details of Parent.</li>
+            <li>Family Card. </li>
+            <li>Aadhaar Card of the Disabled Person and Son/Daughter.</li>
+            <li>Joint savings account bank book in the name of Student and Parent.</li>
+            <li>Bonafide Certificate.</li>
+            <li>Marksheets of the Previous Year.</li>
+            <li>No Assistance Certificate in other field Eligibility: Son/Daughter of Differently-Abled Students who have passed 10th standard and are studying from 11th standard.</li>
+            
+            </ol>
+
+    </section>
+  </div>
+
+</form>
+
+
+
+
+</body>
+</html>

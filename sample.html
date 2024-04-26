@@ -1,0 +1,175 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar styles (your existing navbar styles) */
+    /* ... */
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('logo.jpg');
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+      padding: 0 20px; /* Adjust as needed */
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+    }
+
+    .col {
+      flex-basis: 70%;
+      color: white;
+    }
+
+    .col h1 {
+      font-size: 80px;
+    }
+
+    .col p {
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    .bottom-left {
+      padding-bottom: 60px;
+      margin-left: 20px; /* Adjust as needed */
+    }
+
+    button {
+      width: 180px;
+      color: #000;
+      font-size: 18px;
+      padding: 12px 0;
+      background: #fff;
+      border: 0;
+      border-radius: 20px;
+      outline: none;
+      margin-top: 30px;
+    }
+
+    .tainer {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .card {
+      width: 200px;
+      height: 300px;
+      margin: 10px;
+      border: 1px solid #ccc;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card:hover {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .card a {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Your Navbar code (existing) -->
+
+  <!-- <div class="container">
+    <!-- text -->
+    <!-- <div class="row">
+      <div class="col">
+        <div class="bottom-left">
+          <h1>INDELIBILE</h1><br>
+          <p>INVISIBLE TO EYES, VISIBLE TO YOUR RIGHT</p>
+          <button type="button">Explore</button>
+        </div>
+      </div>
+
+      <div class="tainer"> -->
+        <!-- First line, 2 cards on the right side -->
+        <!-- <div class="card">
+          <a href="#link1"></a>
+          <img src="law.jpeg" alt="Image 1">
+        </div>
+        <div class="card">
+          <a href="#link2"></a>
+          <img src="law2.jpeg" alt="Image 2">
+        </div>
+      </div>
+
+      <div class="tainer"> -->
+        <!-- Second line, 2 cards on the right side -->
+        <!-- <div class="card">
+          <a href="#link3"></a>
+          <img src="law6.jpg" alt="Image 3">
+        </div>
+        <div class="card">
+          <a href="#link4"></a>
+          <img src="logo.jpg" alt="Image 4">
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Your Footer code (if any) -->
+
+<!-- </body>
+</html> --> 
+
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>card</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .card{
+      width: 320px;
+      height: 500px;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+
+<body>
+    <!-- card for image with hover effect -->
+  <div class="card">
+    <img src="{%static 'image/law.jpeg' %}" alt="">
+  </div>
+
+
+
+  
+</body>
+</html>
