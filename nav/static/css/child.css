@@ -1,0 +1,379 @@
+*{
+    font-size: 20px;
+    font-weight: 200;
+    text-align: justify;
+}
+
+.chi h1{
+    margin-top: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    color: brown;
+    text-align: center;
+    text-transform: capitalize;
+
+}
+
+h3{
+    letter-spacing: 2px;
+    background: linear-gradient(to right,tomato,black,tomato);
+    color: white;
+    height: 40px;
+    text-align: center;
+    line-height: 1.5;
+    margin: 0;
+  }
+  
+  .container{
+    margin: 0;
+    display: flex;
+    height: 500px;
+    width: 95%;
+    overflow: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid black;
+  }
+  
+
+  .container img{
+    margin-top: 10px;
+    flex: 1;
+    height: 400px;
+    width: 500px;
+    margin-left: 0;
+  }
+  
+  .container .content{
+    
+    flex: 100;
+    padding: 10px;
+    overflow: auto;
+    text-align: justify;
+  }
+  h2{
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .container .content p{
+    font-size: 20px;
+  }
+  .content p{
+    font-size: 20px;
+    font-weight: 200;
+    text-align: justify;
+  }
+
+   /* content forpuprose */
+.bob marquee{
+    letter-spacing: 2px;
+      background: linear-gradient(to right,tomato,black,tomato);
+      color: white;
+      width: 100%;
+      height: 40px;
+      text-align: center;
+      line-height: 1.7;
+      font-weight: bolder;
+   } 
+
+   .lab img{
+    margin-top: 40px;
+    float: right;
+    width: 500px;
+    height: 900px;
+    margin-left: 10px;
+    padding-left: 10px;
+    margin-bottom: 40px;
+    margin-right: 10px;
+    padding-right: 10px;
+    
+  }
+
+
+  .bor{
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 200;
+    text-align: justify;
+    margin-left: 10px;
+  }
+  
+  
+  .info{
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 200;
+    text-align: justify;
+    margin-left: 10px;
+    
+    
+    
+  }
+
+
+  
+  .info h4{
+    margin-top: 20px;
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    font-weight: bold;
+  }
+  
+  .info h2{
+    font-size: 25px;
+    font-weight: bold;
+    color: brown;
+    margin-bottom: 10px;
+  }
+  
+  .info h5{
+    margin-top: 10px;
+    color: black;
+    font-size:20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+   #ride {
+    font-size: 20px;
+    font-weight: 500;
+   }
+  
+   .lobor marquee{
+    letter-spacing: 2px;
+      background: linear-gradient(to right,tomato,black,tomato);
+      color: white;
+      width: 100%;
+      height: 40px;
+      text-align: center;
+      line-height: 1.7;
+      font-weight: bolder;
+   } 
+  
+  /* CODEDD FOR uses of law */
+  .bal img{
+    margin-top: 30px;
+    float: left;
+    width: 500px;
+    height: 900px;
+    margin-left: 10px;
+    padding-left: 10px;
+    margin-bottom: 40px;
+    margin-right: 30px;
+    padding-right: 10px;
+    
+   }
+  
+  .bal {
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 200;
+    text-align: justify;
+    margin-left: 10px;
+    margin-right: 20px;
+  }
+  
+  .bal h4{
+    margin-top: 30px;
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+  }
+  .bal h2{
+    font-size: 25px;
+    font-weight: bold;
+    color: brown;
+    margin-bottom: 10px;
+  }
+  .bal h6{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .bal h5{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: rgb(133, 17, 17);
+  }
+  .bal p{
+    text-align: right;
+  }
+  
+
+  /* coded for button */
+.button{
+    display: inline-block;
+    padding: 15px 20px;
+    margin-left: 10%;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: rgb(102, 48, 48);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    transition: transform 0.2s, box-shadow  0.2s;
+  }
+  
+  .button:hover{
+    background-color: rgb(139, 17, 17);
+  }
+  
+  .button:active{
+    background-color: rgb(139, 17, 17);
+    box-shadow: 0 0 #666;
+    transform: translateX(4px)   translateY(4px);
+  }
+  .button a{
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+  }
+  
+  .button1{
+    float: right; 
+   margin-right: 30%;
+   top:60px;
+  padding-right: 40px;
+   display: inline-block;
+  padding: 15px 20px;
+   font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: rgb(102, 48, 48);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    transition: transform 0.2s, box-shadow  0.2s;
+  }
+  
+  .button1:hover{
+    background-color: rgb(139, 17, 17);
+  }
+  
+  .button1:active{
+    background-color: rgb(139, 17, 17);
+    box-shadow: 0 0 #666;
+    transform: translateX(4px)   translateY(4px);
+  }
+  .button1 a{
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+  }
+
+  
+  /* coded for footer */
+
+.footer-area{
+    margin-top: 100px;
+    padding: 100px 0;
+    background: linear-gradient(to right,  #1e5799 0%,#182a9b 49%,#2989d8 100%,#7db9e8 100%);
+    color: #fff;
+    position: relative;
+  
+  }
+  
+  .main{
+    width: 1200px;
+    margin: 0 auto;
+    height: auto;
+    
+  }
+  
+  .footer{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+    flex-direction: row;
+  }
+  
+  .single-footer{
+    width: 230px;
+  }
+  
+  .single-footer:first-child{
+    width: 400px;
+  
+  }
+  
+  .single-footer h4{
+    text-transform: capitalize;
+    font-size: 28px;
+    margin-bottom: 20px;
+    
+  }
+  
+  .footer-social a{
+    color: #fff;
+    border: 1px solid #fff;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .footer-social{
+    margin-top: 20px;
+  }
+  
+  
+  .single-footer ul{
+    list-style: none;
+  }
+  
+  .single-footer ul li{
+    margin-bottom:10px ;
+    position: relative;
+    padding-left: 20px;
+  }
+  
+  .single-footer ul li a{
+    color:#fff;
+    text-transform: capitalize;
+    text-decoration:none;
+  
+  }
+  
+  .single-footer ul li a i{
+    position: absolute;
+    left:0;
+    top:5px;
+  }
+  
+  .copy{
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 50px;
+  } 
+  .cop{
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 50px;
+  } 
+  @media only screen and (max-width:600px){
+     .main{
+      width: 320px;
+    }
+    .single-footer:first-child, .single-footer{
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+  
+  
+  
+  
